@@ -1,0 +1,244 @@
+---
+title: "Analysising Multiple files"
+author: "Activinsights Limited"
+date: '`r Sys.Date()`'
+output:
+  word_document:
+    highlight: tango
+    reference_docx: template.docx
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  eval = TRUE,
+  results = "hide",
+  fig.align = "center",
+  fig.height = 8,
+  fig.width = 14
+)
+
+# Set the repository
+local({
+  r <- getOption("repos")
+  r["CRAN"] <- "http://cran.r-project.org"
+  options(repos = r)
+})
+
+# Set the timezone 
+Sys.setenv(TZ = "GMT")
+```
+
+```{r Setting Variables, results = 'asis'}
+timer <- FALSE
+rerun <- FALSE # rerun the analysis
+
+if (timer) {
+  times = c()
+  # Starting the timer
+  cat("
+      #.The time at the start of the analysis")
+  print(Sys.time())
+}
+```
+
+```{r Installing Libraries, eval = TRUE, results = 'hide', warning = FALSE, message = FALSE}
+
+source("Functions/01_library_installer.R")
+
+librarys <- c(
+  "knitr",
+  "ggplot2",
+  "scales",
+  "reshape2",
+  "versions", 
+  "GENEAread",
+  "GENEAclassify"
+)
+
+library_installer(librarys)
+
+library(knitr)
+library(ggplot2)
+library(scales)
+library(reshape2)
+library(versions) 
+
+# Check the versions installed of GENEAread 
+if (packageVersion("GENEAread") != "2.0.8"){
+  url <- "http://cran.r-project.org/src/contrib/Archive/GENEAread/GENEAread_2.0.8.tar.gz"
+  install.packages(pkgs = url, type = "source", repos = NULL)
+}
+
+if (packageVersion("GENEAclassify") != "1.5.1"){
+  url <- "http://cran.r-project.org/src/contrib/Archive/GENEAclassify/GENEAclassify_1.5.1.tar.gz"
+  install.packages(pkgs = url, type = "source", repos = NULL)
+}
+
+if (timer) {
+  # Starting the timer
+  cat("
+      #. Installed libraries")
+  print(Sys.time())
+}
+```
+
+```{r loading packages, results = 'hide', warning = FALSE, message = FALSE, echo = FALSE}
+library(GENEAread)
+library(GENEAclassify)
+
+if (timer) {
+  # Starting the timer
+  cat("
+      #. Loaded libraries")
+  print(Sys.time())
+}
+```
+
+```{r All functions from source}
+
+source("Functions/02_combine_segment_data.R")
+source("Functions/03_naming_protocol.R")
+source("Functions/04_activity_create_df_pcp.R")
+source("Functions/05_number_of_days.R")
+source("Functions/06_bed_rise_detect.R")
+source("Functions/07_activity_state_rearrange.R")
+source("Functions/08_activity_daily_plot.R")
+source("Functions/081_sleep_positionals.R")
+source("Functions/082_light_temp.R")
+source("Functions/083_activity_display.R")
+source("Functions/09_activity_detect.R")
+
+if (timer) {
+  # Starting the timer
+  cat("
+      #. Loading functions")
+  print(Sys.time())
+}
+
+```
+
+```{r Check folders exist}
+dir.create(file.path(paste0(getwd(), "/Data/")), showWarnings = FALSE) # Calibration values
+dir.create(file.path(paste0(getwd(), "/Outputs/")), showWarnings = FALSE) # Output reports
+dir.create(file.path(paste0(getwd(), "/GENEAclassification/")), showWarnings = FALSE) # CSV values for decisions
+```
+
+```{r Finding all the bin files in the directory, results = 'hide', warning = FALSE, message = FALSE, echo = FALSE, eval = TRUE}
+## Grab all bin files
+# Taking all the bin files from the data folder.
+# Finding the bin files inside the folder
+BinPattern <- "*\\.[bB][iI][nN]$"
+files <- list.files(path = paste0(getwd(), "/Data"), pattern = BinPattern, full.names = TRUE)
+# This will be changed to a parameter which can be feed as an output.
+
+if (timer) {
+  # Starting the timer
+  cat("
+      #. Finding files")
+  print(Sys.time())
+}
+```
+
+```{r}
+path <- getwd()
+
+seq <- c(1:length(files))
+
+# seq = seq[c(-3)] # Which numbers are corrupt from the files listed. Use this line to skip a file. Make sure to update on line 216 as well.
+
+for (i in seq) {
+  if (timer) {
+    # Starting the timer
+    cat("
+        #.  File ", i, " starting at ", Sys.time())
+  }
+
+  binfile <- files[i]
+
+  try({
+    # Check that the classified CSV exsists, the Report and the Summary Metrics
+    if (
+      !file.exists(paste0(
+        path, "/Outputs/Activity_Report_",                           strsplit(unlist(strsplit(binfile, "/"))[length(unlist(strsplit(binfile, "/")))], ".bin")[[1]],
+        ".docx"
+      ))
+  
+      | !file.exists(paste0(
+          path, "/Outputs/Activity_Summary_Metrics_", strsplit(unlist(strsplit(binfile, "/"))[length(unlist(strsplit(binfile, "/")))], ".bin")[[1]],
+          ".csv"
+        ))
+  
+      | !file.exists(file.path(path, "/Outputs/", paste0(
+          strsplit(
+            unlist(strsplit(binfile, "/"))[length(unlist(strsplit(binfile, "/")))],
+            ".bin"
+          ),
+          "_All_Data.rds"
+        )))
+  
+      | rerun
+    ) {
+      rmarkdown::render(
+        input = "activity_report.rmd",
+  
+        output_file = paste0(
+          path, "/Activity_Report_",
+          strsplit(unlist(strsplit(binfile, "/"))[length(unlist(strsplit(binfile, "/")))], ".bin")[[1]],
+          ".docx"
+        ),
+  
+        output_dir = paste0(path, "/Outputs"),
+  
+        knit_root_dir = NULL,
+  
+        params = list(
+          binfile = binfile,
+          summary_name = paste0("Activity_Summary_Metrics_", strsplit(unlist(strsplit(binfile, "/"))[length(unlist(strsplit(binfile, "/")))], ".bin")[[1]]),
+          timer = timer
+        )
+      )
+    } else {
+      next
+    }
+  })
+  
+}
+```
+
+# Summary from each file
+
+```{r, results = 'asis'}
+cat("####")
+
+if (timer) {
+  # Starting the timer
+  cat("
+      #. Start of creating summary")
+  print(Sys.time())
+}
+
+# seq = seq[c(-3)] # Which numbers are corrupt from the files listed. Use this line to skip a file. Make sure to update on line 145 as well.
+
+for (i in seq) {
+  
+  binfile <- files[i]
+  cat("
+      #.")
+  cat(" Summary metrics of the file:", binfile)
+  # Printing out the name of the file.
+  try({
+      Statistics <- read.csv(paste0(
+      path, "/Outputs/Activity_Summary_Metrics_", strsplit(unlist(strsplit(binfile, "/"))[length(unlist(strsplit(binfile, "/")))], ".bin")[[1]],
+      ".csv"
+    ))
+    print(knitr::kable(Statistics))
+  })
+}
+
+# Delete the GENEAclassification fOlder
+unlink(file.path(paste0(getwd(), "/GENEAclassification/")), force = T)
+```
+

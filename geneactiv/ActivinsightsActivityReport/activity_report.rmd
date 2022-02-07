@@ -1,0 +1,650 @@
+---
+title: "Activity Report"
+output:
+  word_document:
+    highlight: tango
+    reference_docx: template.docx
+params:
+  binfile: NA
+  summary_name: NA
+  timer: NA
+---
+
+```{r setup, include = FALSE}
+timer <- params$timer
+# timer = TRUE # For Manual Testing and vebrose mode remove comment
+if (timer) {
+  knitr::opts_chunk$set(
+    echo = TRUE,
+    warning = FALSE,
+    message = FALSE,
+    eval = TRUE,
+    results = "show",
+    fig.align = "center",
+    fig.height = 8,
+    fig.width = 14
+  )
+  times = time_stage = c()
+  times = append(times, Sys.time())  
+  time_stage = append(time_stage, paste0("Start of File"))
+} else {
+  knitr::opts_chunk$set(
+    echo = FALSE,
+    warning = FALSE,
+    message = FALSE,
+    eval = TRUE,
+    results = "hide",
+    fig.align = "center",
+    fig.height = 8,
+    fig.width = 14
+  )
+}
+```
+
+```{r parameters}
+daily_plot_switch <- TRUE
+activity_daily_summary_switch <- TRUE
+device_details_switch <- TRUE
+sleep_interuptions_switch <- FALSE
+
+binfile <- params$binfile
+summary_name <- params$summary_name
+mmap.load <- FALSE
+datacols <- c(
+  "UpDown.mean", "UpDown.var", "UpDown.mad",
+  "Degrees.mean", "Degrees.var", "Degrees.mad",
+  "Magnitude.mean",
+  "Light.mean",
+  "Temp.mean", "Temp.sumdiff", "Temp.abssumdiff",
+  "Step.GENEAcount", "Step.sd", "Step.mean", "Step.median"
+)
+
+start_time <- "03:00"
+```
+
+```{r Manual parameters, eval = FALSE}
+library(GENEAread)
+library(GENEAclassify)
+library(knitr)
+library(ggplot2)
+library(scales)
+library(reshape2)
+
+# Functions to use.
+source("Functions/01_library_installer.R")
+source("Functions/02_combine_segment_data.R")
+source("Functions/03_naming_protocol.R")
+source("Functions/04_activity_create_df_pcp.R")
+source("Functions/05_number_of_days.R")
+source("Functions/06_bed_rise_detect.R")
+source("Functions/07_activity_state_rearrange.R")
+source("Functions/08_activity_daily_plot.R")
+source("Functions/081_sleep_positionals.R")
+source("Functions/082_light_temp.R")
+source("Functions/083_activity_display.R")
+source("Functions/09_activity_detect.R")
+
+i <- 2
+BinPattern <- "*\\.[bB][iI][nN]$"
+files <- list.files(path = paste0(getwd(), "/Data"), pattern = BinPattern, full.names = TRUE)
+binfile <- files[i]
+header <- header.info(binfile)
+summary_name <- paste0("Activity_Summary_Metrics_", strsplit(unlist(strsplit(binfile, "/"))[length(unlist(strsplit(binfile, "/")))], ".bin")[[1]])
+mmap.load <- FALSE
+datacols <- c(
+  "UpDown.mean", "UpDown.var", "UpDown.mad",
+  "Degrees.mean", "Degrees.var", "Degrees.mad",
+  "Magnitude.mean",
+  "Light.mean",
+  "Temp.mean", "Temp.sumdiff", "Temp.abssumdiff",
+  "Step.GENEAcount", "Step.sd", "Step.mean", "Step.median"
+)
+
+
+start_time <- "03:00"
+
+```
+
+```{r Combining and Classifying segmented data}
+if (timer) {
+  # Starting the timer
+  cat("
+      #. Start of Segmenting data")
+  print(Sys.time())
+  times = append(times, Sys.time())
+  time_stage = append(time_stage, paste0("Start of Segmenting data"))
+}
+
+data_name <- naming_protocol(binfile, prefix = "")
+
+# Segment the data using the Awake Sleep Model.
+segment_data <- combine_segment_data(binfile,
+                                     start_time,
+                                     datacols,
+                                     mmap.load = mmap.load
+)
+
+# Routine to remove overlap segments.
+k = 1 # Counter
+collen = length(segment_data$Start.Time)
+overlap_list = which(segment_data$Start.Time[1:(collen - k)] > segment_data$Start.Time[(k+1):collen])
+
+while (length(overlap_list) > 0){
+  segment_data = segment_data[-overlap_list,]
+  k = k + 1 
+  overlap_list = which(segment_data$Start.Time[1:(collen - (k))] > segment_data$Start.Time[(k+1):collen])
+}
+
+data_name <- naming_protocol(binfile)
+
+saveRDS(segment_data, file.path(getwd(), "/Outputs/", data_name))
+
+# Write out the version of data that we want people to see
+csvname <- naming_protocol(binfile, suffix = "_All_Data.csv")
+
+write.csv(segment_data,
+  file = file.path(paste0("Outputs/", csvname))
+)
+```
+
+```{r activity_create_df_pcp function}
+if (timer) {
+  # Starting the timer
+  cat("
+      #. Deciding on classes")
+  print(Sys.time())
+  times = append(times, Sys.time())
+  time_stage = append(time_stage, paste0("Deciding on Classes"))
+}
+
+header <- header.info(binfile)
+
+df_pcp <- activity_create_df_pcp(segment_data,
+  summary_name,
+  header = header,
+  # r Cut_points
+  Magsa_cut = 0.04, # 40mg
+
+  Duration_low  = exp(5.5),
+  Duration_high = exp(8),
+
+  Mad.Score2_low  = 0.45,
+  Mad.Score2_high = 5,
+
+  Mad.Score4_low  = 0.45,
+  Mad.Score4_high = 5,
+
+  Mad.Score6_low  = 0.45,
+  Mad.Score6_high = 5,
+
+  Mad_low  = 0.45,
+  Mad_high = 5
+)
+
+segment_data1 <- df_pcp
+# Add the additional class onto the end.
+segment_data1$Class.prior <- segment_data1$Class.current <- segment_data1$Class.post <- 2
+# Create the correct classes for post and priors.
+segment_data1$Class.prior[1:(length(segment_data1$Class.prior) - 2)] <- df_pcp$Class.current
+segment_data1$Class.current[2:(length(segment_data1$Class.prior) - 1)] <- df_pcp$Class.current
+segment_data1$Class.post[3:(length(segment_data1$Class.prior))] <- df_pcp$Class.current
+
+```
+
+```{r Number of days function}
+no_days <- number_of_days(binfile, start_time) + 1 # For days rather than nights.
+```
+
+```{r Bed Rise Detection, results = 'show', echo = FALSE}
+if (timer) {
+  # Starting the timer
+  cat("
+      #. Start of Bed Rise Algorithm")
+  print(Sys.time())
+  times = append(times, Sys.time())
+  time_stage = append(time_stage, paste0("Start of Bed Rise Algorithm"))
+}
+
+# Find the Bed and Rise times
+bed_rise_df <- bed_rise_detect(binfile,
+                               df_pcp,
+                               no_days,
+                               verbose = FALSE
+)
+```
+
+```{r Initialising parameters required}
+t <- as.POSIXct(as.numeric(as.character(segment_data1$Start.Time[1])), origin = "1970-01-01")
+first_date <- as.Date(t)
+first_time <- as.POSIXct(as.character(paste((first_date - 1), "15:00")), format = "%Y-%m-%d %H:%M", origin = "1970-01-01")
+
+min_boundary <- max_boundary <- c()
+
+for (i in 1:(no_days)) {
+  min_boundary[i] <- as.POSIXct(as.character(paste(first_date + i - 1, start_time)), format = "%Y-%m-%d %H:%M", origin = "1970-01-01")
+  max_boundary[i] <- as.POSIXct(as.character(paste(first_date + i, start_time)), format = "%Y-%m-%d %H:%M", origin = "1970-01-01")
+}
+
+boundarys <- cbind(min_boundary, max_boundary)
+
+header <- header.info(binfile)
+```
+
+```{r State Rearrange}
+# Use the Bed Rise rules to determine what state this will
+segment_data1 <- activity_state_rearrange(
+  segment_data1,
+  boundarys,
+  bed_rise_df$bed_time,
+  bed_rise_df$rise_time,
+  first_date
+)
+
+# Write out the version of data that we want people to see
+# csvname <- naming_protocol(binfile, prefix = "", suffix = "_All_Data.csv")
+# 
+# write.csv(segment_data1,
+#   file = file.path(paste0("Outputs/", csvname))
+# )
+```
+
+```{r Daily Plots}
+
+if (daily_plot_switch) {
+  t <- as.POSIXct(as.numeric(as.character(segment_data1$Start.Time[1])), origin = "1970-01-01")
+  first_date <- as.Date(t)
+  first_start_time <- as.POSIXct(as.character(paste((first_date), start_time)), format = "%Y-%m-%d %H:%M", origin = "1970-01-01")
+
+  if (t < first_start_time) {
+    first_start_time <- as.POSIXct(as.character(paste((first_date - 1), start_time)), format = "%Y-%m-%d %H:%M", origin = "1970-01-01")
+    first_date <- as.Date(first_date)
+  }
+
+  # Finding the first time
+  first_time <- segment_data1$Start.Time[1]
+  last_time <- segment_data1$Start.Time[length(segment_data1$Start.Time)] + segment_data1$Segment.Duration.current[length(segment_data1$Segment.Duration.current)]
+
+  # Calculate boundaries of plots.
+  min_boundary <- max_boundary <- c()
+
+  for (i in 1:(no_days + 1)) {
+    min_boundary[i] <- as.POSIXct(as.character(paste(first_date + i - 1, start_time)), format = "%Y-%m-%d %H:%M", origin = "1970-01-01")
+    max_boundary[i] <- as.POSIXct(as.character(paste(first_date + i, start_time)), format = "%Y-%m-%d %H:%M", origin = "1970-01-01")
+  }
+
+  boundarys <- cbind(min_boundary, max_boundary)
+
+  #### For Loop ####
+  for (i in 1:(no_days + 1)) {
+    if (timer) {
+      # Starting the timer
+      cat("
+            #. Time of Day ", i, " plot creation is ")
+      print(Sys.time())
+      times = append(times, Sys.time())
+      time_stage = append(time_stage, paste0("Daily Plot: ", i))
+    }
+    
+    # Check that times are within boundaries 
+    if (min_boundary[i] > as.numeric(last_time)){next}
+
+    # Read in the AccData
+    if (i == 1) {
+      AccData <- read.bin(binfile,
+        downsample = as.numeric(unlist(header$Value[2])),
+        start = as.numeric(first_time),
+        end = max_boundary[i],
+        Use.Timestamps = T,
+        mmap.load = mmap.load
+      )
+    } else if (i == no_days + 1) {
+      AccData <- read.bin(binfile,
+        downsample = as.numeric(unlist(header$Value[2])),
+        start = min_boundary[i],
+        end = as.numeric(last_time),
+        Use.Timestamps = T,
+        mmap.load = mmap.load
+      )
+    } else {
+      AccData <- read.bin(binfile,
+        downsample = as.numeric(unlist(header$Value[2])),
+        start = min_boundary[i],
+        end = max_boundary[i],
+        Use.Timestamps = T,
+        mmap.load = mmap.load
+      )
+    }
+
+    # Now find the data between the threshold
+    segment_data <- segment_data1[segment_data1$Start.Time > min_boundary[i] &
+                                  segment_data1$Start.Time < max_boundary[i], ]
+
+    # Ensures the markdown doesn't iterate over a day that doesn't exist.
+    if (length(segment_data[, 1]) == 0) {
+      next
+    }
+
+    if (i == 1) {
+      activity_daily_plot(AccData,
+        segment_data,
+        boundarys = boundarys[i, ],
+        bed_time  = bed_rise_df$bed_time[i],
+        rise_time = bed_rise_df$rise_time[i],
+        first_date
+      )
+    } else if (i == no_days) {
+      activity_daily_plot(AccData,
+        segment_data,
+        boundarys = boundarys[i, ],
+        bed_time  = NA,
+        rise_time = NA,
+        first_date
+      )
+    } else {
+      activity_daily_plot(AccData,
+        segment_data,
+        boundarys = boundarys[i, ],
+        bed_time  = bed_rise_df$bed_time[i],
+        rise_time = bed_rise_df$rise_time[i - 1],
+        first_date
+      )
+    }
+  }
+}
+```
+
+```{r Activity Summary header, results = 'asis'}
+if (activity_daily_summary_switch) {
+  cat("##### Activity Daily Summary.")
+  if (timer) {
+    # Starting the timer
+    cat("
+        #. Time at start of stats table ")
+    print(Sys.time())
+    times = append(times, Sys.time())
+    time_stage = append(time_stage, paste0("Activity Summary"))
+  }
+}
+```
+
+```{r Activity Stats table, results = 'markdown', eval = TRUE}
+activity_df <- activity_detect(
+  segment_data1,
+  boundarys
+)
+
+if (activity_daily_summary_switch) {
+  knitr::kable(activity_df)
+}
+
+
+write.csv(activity_df, file.path(paste0("Outputs/", summary_name, ".csv")), row.names = FALSE)
+```
+
+```{r Device Details Header, results = 'asis'}
+if (device_details_switch) {
+  cat("##### Device Details.")
+}
+```
+
+```{r Device Details Summary, results = 'markdown'}
+if (device_details_switch) {
+  if (timer) {
+    # Starting the timer
+    cat("
+        #. Start of creating device details ")
+    print(Sys.time())
+    times = append(times, Sys.time())
+    time_stage = append(time_stage, paste0("Device Details"))
+  }
+
+  h <- header.info(binfile)
+
+  Title <- "Sleep Report"
+  Date_Created <- as.character(Sys.Date())
+  Binfile <- binfile
+  Analysis_Code <- "0.1"
+  Subject_Code <- unlist(h[[1]][10])
+  Serial_Code <- unlist(h[[1]][11])
+  Date_Of_Birth <- unlist(h[[1]][11])
+  Sex <- unlist(h[[1]][12])
+  height_m <- unlist(h[[1]][13])
+  weight_kg <- unlist(h[[1]][14])
+  handedness <- unlist(h[[1]][15])
+  Original_sample_frequency_Hz <- unlist(h[[1]][2])
+  Start_Time <- unlist(h[[1]][4])
+  Measurement_period <- unlist(h[[1]][3])
+
+  Title <- c(
+    "Date_Created",
+    "Binfile",
+    "Analysis_Code_Version",
+    "Subject_Code",
+    "Serial_Code",
+    "Date_Of_Birth",
+    "Sex",
+    "height_m",
+    "weight_kg",
+    "handedness",
+    "Original_sample_frequency_Hz",
+    "Start_Time",
+    "Measurement_period"
+  )
+
+  Sleep_Report <- c(
+    Date_Created,
+    Binfile,
+    Analysis_Code,
+    Subject_Code,
+    Serial_Code,
+    Date_Of_Birth,
+    Sex,
+    height_m,
+    weight_kg,
+    handedness,
+    Original_sample_frequency_Hz,
+    Start_Time,
+    Measurement_period
+  )
+
+  # Add Text on the csv
+  # text = " "
+  # write.table( text,
+  #              file = file.path(paste0("Outputs/",summary_name, ".csv")),
+  #              append = T,
+  #              sep=',',
+  #              row.names=F,
+  #              col.names=F )
+
+  Title_Page <- data.frame(Title, Sleep_Report)
+  knitr::kable(Title_Page)
+
+  # Add the details onto the csv
+
+  # write.table( Title_Page,
+  #              file = file.path(paste0("Outputs/",summary_name, ".csv")),
+  #              append = T,
+  #              sep=',',
+  #              row.names=F,
+  #              col.names=F )
+}
+```
+
+```{r Sleep Interuptions Header, results = 'asis'}
+if (sleep_interuptions_switch) {
+  cat("##### Sleep Interuptions")
+}
+```
+
+```{r Sleep Interuptions Summary}
+
+if (sleep_interuptions_switch) {
+  if (timer) {
+    # Starting the timer
+    cat("
+        #. Start of creating Sleep interuptions ")
+    print(Sys.time())
+    times = append(times, Sys.time())
+    time_stage = append(time_stage, paste0("Sleep Interuptions"))
+  }
+  ## Now adding in the next line as sleep interuptions each night. This can be done from the posture changes
+  # Add Text on the csv
+  text <- " "
+  write.table(text,
+    file = file.path(paste0("Outputs/", summary_name, ".csv")),
+    append = T,
+    sep = ",",
+    row.names = F,
+    col.names = F
+  )
+
+  text <- "Sleep Interuptions through each night"
+  write.table(text,
+    file = file.path(paste0("Outputs/", summary_name, ".csv")),
+    append = T,
+    sep = ",",
+    row.names = F,
+    col.names = F
+  )
+
+  # Dummy variables
+  noActivity <- medianActivityLen <- FirstWakeAfterSleep <- 0
+
+  for (j in 1:length(bed_rise_df$bed_time)) {
+    # Skipping variable
+    Skipping <- FALSE
+
+    df <- segment_data1[segment_data1$Start.Time > bed_rise_df$bed_time[j] &
+      segment_data1$Start.Time < bed_rise_df$rise_time[j], ]
+
+    # Sleep Interuptions - From SIN, Inactive or Active class
+    Sleep_interuptions <- df$Start.Time[df$Class.current == 2 |
+      df$Class.current == 3 |
+      df$Class.current == 4]
+
+    Duration <- df$Segment.Duration.current[df$Class.current == 2 |
+      df$Class.current == 3 |
+      df$Class.current == 4]
+
+    # If no interuptions
+    if (length(df$Start.Time) == 0 | is.null(df) == TRUE) {
+      Sleep_List <- c(as.character(DayNo[j]), "No Interuptions")
+
+      # Now writing these lines under the Date
+      write.table(t(Sleep_List),
+        file = file.path(paste0("Outputs/", summary_name, ".csv")),
+        append = T,
+        sep = ",",
+        row.names = F,
+        col.names = F
+      )
+      next
+    }
+
+    # Adding the Sleep interuptions
+    n <- m <- 1
+    k <- 0
+    Sleep_interuptions_2 <- Durations_2 <- c()
+    Sleep_interuptions_removed <- c()
+
+    if (length(Sleep_interuptions) > 1 & length(Duration) > 1) {
+      for (p in 2:(length(Sleep_interuptions) - 1)) {
+
+        # If the sum of the values from the previous Durations add up to a change then
+        if (!is.na(Sleep_interuptions[p] & !is.na(Sleep_interuptions[p - k - 1])) & !is.na(Duration[(p - k - 1):(p - 1)])) {
+          if (verbose) {
+            print("1st if statement passed")
+          }
+          if (Sleep_interuptions[p] == Sleep_interuptions[p - k - 1] + sum(Duration[(p - k - 1):(p - 1)])) {
+            if (verbose) {
+              print("2nd if statement passed")
+            }
+            if (Sleep_interuptions[p + 1] != Sleep_interuptions[p - k] + sum(Duration[(p - k):(p)])) {
+              if (verbose) {
+                print("3rdt if statement passed")
+              }
+              Sleep_interuptions_2[m] <- Sleep_interuptions[p - k - 1]
+              Durations_2[m] <- sum(Duration[(p - k - 1):(p - 1)])
+              m <- m + 1
+            }
+            Sleep_interuptions_removed[n] <- p
+            n <- n + 1
+            k <- k + 1
+          } else {
+            k <- 0
+          }
+        } else {
+          if (verbose) {
+            print("nas set")
+          }
+          medianActivityLen[i] <- NA
+          FirstWakeAfterSleep[i] <- NA
+          next
+        }
+      }
+
+      # Running an exception here to prevent errors
+      if (!is.na(medianActivityLen) & !is.na(FirstWakeAfterSleep)) {
+        Times <- c(Sleep_interuptions_2, Sleep_interuptions[-Sleep_interuptions_removed])
+        Durations <- c(Durations_2, Duration[-Sleep_interuptions_removed])
+
+        df1 <- data.frame(Times, Durations)
+
+        # Order based on time
+        df1 <- df1[order(df1$Times), ]
+
+        # Remove the duplicates
+        df1 <- df1[duplicated(df1$Times) == FALSE, ]
+
+        if (length(df1$Times != 0)) {
+          noActivity[i] <- length(df1$Times)
+        }
+        medianActivityLen[i] <- median(df1$Durations)
+
+        #### Finding the first wake after sleep. ####
+        # Firstly finding the instance of sleep
+        SleepStates <- which(df$Class.current == 1)
+        AwakeStates <- which(df$Class.current != 1)
+        # Now looking at the differences in these Sleep states
+        DiffSleepStates <- diff(SleepStates)
+        DiffAwakeStates <- diff(AwakeStates)
+
+        if (length(AwakeStates) != 0) {
+          if (AwakeStates[1] == 1) {
+            SecondSleep <- which(DiffSleepStates > 1)[1]
+          } else {
+            SecondSleep <- which(DiffSleepStates > 1)[2]
+          }
+          FirstWakeAfterSleep[i] <- as.POSIXct(as.numeric(as.character(df$Start.Time[which(df$Class.current == 1)[SleepStates[SecondSleep]]])),
+            origin = "1970-01-01"
+          )
+        }
+
+        write.table(df,
+          file = file.path(paste0("Outputs/", summary_name, ".csv")),
+          append = T,
+          sep = ",",
+          row.names = F,
+          col.names = F
+        )
+      }
+    } else {
+      next
+    }
+  }
+}
+```
+
+```{r Outputing timer csv}
+if (timer){
+      cat("
+        #. End of analysis for file ", binfile)
+    print(Sys.time())
+  times = as.numeric(append(times, Sys.time()))
+  time_stage = append(time_stage, paste0("End of File"))
+  timing_csv_name = naming_protocol(binfile, prefix = "", suffix = "_Time_Analysis_Report.csv")
+  time_df = data.frame(times, time_stage)
+  write.csv(time_df, timing_csv_name)
+}
+```
+
