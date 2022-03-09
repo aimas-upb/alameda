@@ -23,8 +23,9 @@ from sklearn.model_selection import LeaveOneGroupOut, cross_validate
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score, make_scorer, precision_score, recall_score
 from sklearn.impute import SimpleImputer
-from imblearn.combine import SMOTEENN
-from imblearn.over_sampling import SMOTE
+from imblearn.combine import SMOTEENN, SMOTETomek
+from imblearn.over_sampling import SMOTE, BorderlineSMOTE, KMeansSMOTE
+from imblearn.under_sampling import RepeatedEditedNearestNeighbours, EditedNearestNeighbours, TomekLinks
 
 MAX_DAYS = 14
 
@@ -165,18 +166,35 @@ if __name__ == "__main__":
         #                              random_state=42)
 
         # Define a GradientBoosting Classifier
-        clf = GradientBoostingClassifier(loss="deviance", learning_rate=0.75, n_estimators=200, subsample=1.0,
-                                         max_depth=20, max_features=0.75,
+        clf = GradientBoostingClassifier(loss="deviance", learning_rate=0.5, n_estimators=400, subsample=1.0,
+                                         max_depth=40, max_features=0.5,
                                          random_state=42)
 
         logo = LeaveOneGroupOut()
+        nr_splits = logo.get_n_splits(X_imp, y, groups=groups)
+        f1_scores_indeterminate = np.zeros(nr_splits)
+        f1_scores_mostly_on = np.zeros(nr_splits)
         for idx, (train_idx, test_idx) in enumerate(logo.split(X_imp, y, groups=groups)):
             # print("TRAIN:", train_idx, "TEST:", test_idx)
             X_train, X_test = X_imp[train_idx], X_imp[test_idx]
             y_train, y_test = y[train_idx], y[test_idx]
 
             # resample
-            sm = SMOTE(random_state=42, k_neighbors=1)
+            sm = SMOTE(random_state=42, k_neighbors=2, sampling_strategy={"indeterminate": 100})
+            # sm = SMOTE(random_state=42, k_neighbors=5, sampling_strategy="not minority")
+            # sm = KMeansSMOTE(random_state=42, k_neighbors=3, sampling_strategy="not minority", kmeans_estimator=20,
+            #                  cluster_balance_threshold="auto")
+            # sm = BorderlineSMOTE(random_state=42, k_neighbors=5, sampling_strategy="not minority")
+            # sm = SMOTEENN(random_state=42, sampling_strategy="not minority",
+            #               smote=SMOTE(random_state=42, k_neighbors=10, sampling_strategy="not minority"),
+            #               enn=RepeatedEditedNearestNeighbours(sampling_strategy="not majority",
+            #                                           n_neighbors=5, kind_sel="mode")
+            #               )
+            # sm = SMOTETomek(random_state=42, sampling_strategy="not minority",
+            #               smote=SMOTE(random_state=42, k_neighbors=10, sampling_strategy="not minority"),
+            #               tomek=TomekLinks(sampling_strategy="not majority")
+            #               )
+
             X_train_smote, y_train_smote = sm.fit_resample(X_train, y_train)
             print(np.unique(y_train_smote, return_counts=True))
 
@@ -184,14 +202,44 @@ if __name__ == "__main__":
             X_test_df = pd.DataFrame(data=X_test, columns=list(X.columns.values))
 
             clf.fit(X_train_df, y_train_smote)
+            confusion_mat = confusion_matrix(y_test, clf.predict(X_test_df), labels=LABELS)
             print("Confusion matrix for split %i " % (idx + 1))
-            print(confusion_matrix(y_test, clf.predict(X_test_df), labels=LABELS))
+            print(confusion_mat)
             print("There were %i cases of indeterminate to predict." % np.sum(y_test == "indeterminate"))
 
             importance_idx_sorted = np.argsort(clf.feature_importances_)
             print("Top 20 important features: ", list(reversed(clf.feature_names_in_[importance_idx_sorted[-20:]])))
             print("Top 20 importance: ", list(reversed(clf.feature_importances_[importance_idx_sorted[-20:]])))
 
+            prec_indeterminate = 1.0
+            if np.sum(confusion_mat, axis=1)[1] > 0:
+                prec_indeterminate = confusion_mat[1][1] / np.sum(confusion_mat, axis=1)[1]
+
+            recall_indeterminate = 1.0
+            if np.sum(confusion_mat, axis=0)[1]:
+                recall_indeterminate = confusion_mat[1][1] / np.sum(confusion_mat, axis=0)[1]
+
+            prec_mostly_on = 1.0
+            if np.sum(confusion_mat, axis=1)[2] > 0:
+                prec_mostly_on = confusion_mat[2][2] / np.sum(confusion_mat, axis=1)[2]
+
+            recall_mostly_on = 1.0
+            if np.sum(confusion_mat, axis=0)[2] > 0:
+                recall_mostly_on = confusion_mat[2][2] / np.sum(confusion_mat, axis=0)[2]
+
+            if prec_indeterminate > 0 or recall_indeterminate > 0:
+                f1_scores_indeterminate[idx] = 2 * prec_indeterminate * recall_indeterminate / \
+                                           (prec_indeterminate + recall_indeterminate)
+            else:
+                f1_scores_indeterminate[idx] = 0
+
+            if prec_mostly_on > 0 or recall_mostly_on > 0:
+                f1_scores_mostly_on[idx] = 2 * prec_mostly_on * recall_mostly_on / (prec_mostly_on + recall_mostly_on)
+            else:
+                f1_scores_mostly_on[idx] = 0
+
+            print("Indeterminate class F1 Score for split %i = %5.3f " % (idx + 1, f1_scores_indeterminate[idx]))
+            print("Mostly On class F1 Score for split %i = %5.3f " % (idx + 1, f1_scores_mostly_on[idx]))
             print("")
 
         # cv_res = cross_validate(rf_clf, X_imp, y, groups=groups, cv=LeaveOneGroupOut(),
