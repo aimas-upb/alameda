@@ -121,19 +121,21 @@ no_days <- number_of_days(binfile, start_time) + 1 # For days rather than nights
 if (!file.exists(file.path(getwd(), "/Outputs/", bed_rise_df_file))) {
   Sleep_Diary = NA
   
-  tryCatch(
-    {
-      # Checking to find if there is a corresponding sleep diary 
-      binfile_stripped = unlist(strsplit(binfile, "/"))
-      binfile_stripped = binfile_stripped[length(binfile_stripped)]
-      binfile_stripped = unlist(strsplit(binfile_stripped, ".bin"))
-      
-      Sleep_Diary = read.csv(paste0("Sleep_Diaries/", binfile_stripped, "_Sleep_Diary.csv"))
-    },
-    error=function(cond) {
-      message(paste("Error Analysing Sleep Diaries. Reason:", cond))
-    }
-  )
+  # tryCatch(
+  #   {
+  #     # Checking to find if there is a corresponding sleep diary 
+  #     binfile_stripped = unlist(strsplit(binfile, "/"))
+  #     binfile_stripped = binfile_stripped[length(binfile_stripped)]
+  #     binfile_stripped = unlist(strsplit(binfile_stripped, ".bin"))
+  #     
+  #     if (file.exists(paste0("Sleep_Diaries/", binfile_stripped, "_Sleep_Diary.csv"))) {
+  #       Sleep_Diary = read.csv(paste0("Sleep_Diaries/", binfile_stripped, "_Sleep_Diary.csv"))
+  #     }
+  #   },
+  #   error=function(cond) {
+  #     message(paste("Error Analysing Sleep Diaries. Reason:", cond))
+  #   }
+  # )
   
   # Find the Bed and Rise times
   bed_rise_df <- bed_rise_detect(binfile,

@@ -1,0 +1,14 @@
+#### Copyright Activinsights Limited 2021 ####
+#' Title: Multiple file Activity Report Markdown
+#'
+#' Description: Completes Activity Analysis for Multiple files and outputs the summary metrics for each activity report
+#'
+#' Version: 1.0.2
+#'
+#' History of changes: 
+#' 
+#' CS | 01/02/2020 | Initial creation.
+#' CS | 07/07/2020 | GENEAclassify 1.5.1 update.
+#' CS | 22/03/2021 | Adding in correct package installer from url
+
+

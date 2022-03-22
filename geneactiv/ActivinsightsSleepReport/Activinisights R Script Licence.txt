@@ -1,0 +1,60 @@
+This licence agreement ("Licence") is a legal agreement between you ("Licensee" or "you") and ACTIVINSIGHTS LIMITED (incorporated and registered in England with company number 6576069 and whose registered office is at 6 Nene Road, Bicton Industrial Estate, Kimbolton, Huntingdon, Cambridgeshire PE28 0LF ("Licensor, us" or "we") for:
+* the Activinsights analysis scripts (and any data supplied with the software) that is from time available from the Licensor by email or download from the Licensor’s open platform website (https://open.geneactiv.org/ ("Software"); and
+* any online or other electronic documents made available by us in connection with the Software ("Documents"). 
+We license use of the Software and Documents to you on the basis of this Licence. We do not sell the Software or Documents to you. We remain the owners of the Software and Documents at all times. 
+OPERATING SYSTEM REQUIREMENTS: THE SOFTWARE IS DESIGNED FOR USE WITHIN THE R FRAMEWORK.
+IMPORTANT NOTICE TO ALL USERS: 
+* BY INSTALLING THIS SOFTWARE YOU AGREE TO THE TERMS OF THIS LICENCE WHICH WILL BIND YOU AND YOUR EMPLOYEES (IF ANY)]. THE TERMS OF THIS LICENCE INCLUDE, IN PARTICULAR, LIMITATIONS ON LIABILITY.
+* IF YOU DO NOT AGREE TO THE TERMS OF THIS LICENCE, WE WILL NOT LICENSE THE SOFTWARE AND DOCUMENTS TO YOU AND YOU MUST DISCONTINUE THE DOWNLOADING PROCESS.
+You should print a copy of this Licence for future reference.
+1. Grant and scope of licence
+1.1 In consideration of you agreeing to abide by the terms of this Licence, we hereby grant to you a non-exclusive, non-transferable licence to use the Software and the Documents on the terms of this Licence.
+1.2 You may:
+1.2.1 download, install and use the Software for your personal purposes (if you are a private individual acting otherwise than for commercial purposes) or your internal research and development purposes (if you are an educational or other non-commercial body) only, but in either case only for the internal development and/or testing of applications by you for use in conjunction with the GENEActiv wrist-worn, raw data accelerometer as manufactured and produced by the Licensor (the ‘Device’) and with a view to producing and developing analysis tools (for non commercial purposes) to facilitate evaluation of the data collected and produced by the Device;
+1.2.2 provided you comply with the provisions in condition 2, make up to one copy of the Software for back-up purposes only; 
+1.2.3 receive and use any free supplementary software code or update of the Software incorporating "patches" and corrections of errors as may be provided by us from time to time; and
+1.2.4 use any Documents in support of the use permitted under this condition 1.2 and make up to three copies of the Documents as are reasonably necessary for its lawful use.
+2. Restrictions
+2.1 Except as expressly set out in this Licence or as permitted by any local law, you undertake:
+2.1.1 not to use the Software or Documentation for any purpose other than the development and/or testing of applications for use in conjunction with the Device as described in condition 1.2.1;
+2.1.2 not to copy the Software or Documents except where such copying is incidental to normal use of the Software, or where it is necessary for the purpose of back-up or operational security;
+2.1.3 not to rent, lease, sub-license, loan, translate, merge, adapt, vary or modify the Software or Documents;
+2.1.4 to keep all copies of the Software secure and to maintain accurate and up-to-date records of the number and locations of all copies of the Software;
+2.1.5 to supervise and control use of the Software and ensure that the Software is used by your employees and representatives in accordance with the terms of this Licence;
+2.1.6 to include our copyright notice on all entire and partial copies you make of the Software on any medium; and
+2.1.7 not to provide or otherwise make available the Software in whole or in part (including but not limited to program listings, object and source program listings, object code and source code), in any form to any person other than your employees without prior written consent from us.
+3. Intellectual property rights
+3.1 You acknowledge that all intellectual property rights in the Software and the Documents anywhere in the world belong to us, that rights in the Software are licensed (not sold) to you, and that you have no rights in, or to, the Software or the Documents other than the right to use them in accordance with the terms of this Licence.
+3.2 You hereby grant us a perpetual, non-exclusive, royalty free, sub-licensable licence to use any modification or adaptation to the Software created by you, in source and object code form, including (but not limited to) the integration of such modification or adaptation into future releases of the Software.
+4. Limited warranty
+4.1 The Software and any Documentation is provided on an ‘as is’ basis without warranty of any kind, express or implied, including but not limited to the warranties of fitness for a particular purpose and non-infringement. In no event (subject as provided in condition 4.3), shall the Licensor be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the Software or any Documentation or the use or other dealings in the Software or any Documentation.
+4.2 You acknowledge that the Software has not been developed to meet your individual requirements.
+4.3 Nothing in this Licence shall limit or exclude our liability for:
+4.3.1 death or personal injury resulting from our negligence;
+4.3.2 fraud or fraudulent misrepresentation;
+4.3.3 any other liability that cannot be excluded or limited by English law.
+4.4 This Licence sets out the full extent of our obligations and liabilities in respect of the supply of the Software and Documents. Except as expressly stated in this Licence, there are no conditions, warranties, representations or other terms, express or implied, that are binding on us.  Any condition, warranty, representation or other term concerning the supply of the Software and Documents which might otherwise be implied into, or incorporated in, this Licence whether by statute, common law or otherwise, is excluded to the fullest extent permitted by law.
+5. Termination
+5.1 We may terminate this Licence immediately by written notice to you if you commit a material or persistent breach of this Licence which you fail to remedy (if remediable) within 14 days after the service of written notice requiring you to do so. 
+5.2 Upon termination for any reason:
+5.2.1 all rights granted to you under this Licence shall cease;
+5.2.2 you must immediately cease all activities authorised by this Licence; and
+5.2.3 you must immediately delete or remove the Software from all computer equipment in your possession, and immediately destroy or return to us (at our option) all copies of the Software and Documents then in your possession, custody or control and, in the case of destruction, certify to us that you have done so.
+6. Other important terms
+6.1 We may transfer our rights and obligations under this Licence to another organisation, but this will not affect your rights or our obligations under this Licence. 
+6.2 You may only transfer your rights or your obligations under this Licence to another person if we agree in writing.
+6.3 If we fail to insist that you perform any of your obligations under this Licence, or if we do not enforce our rights against you, or if we delay in doing so, that will not mean that we have waived our rights against you and will not mean that you do not have to comply with those obligations. If we do waive a default by you, we will only do so in writing, and that will not mean that we will automatically waive any later default by you. 
+6.4 Each of the conditions of this Licence operates separately. If any court or competent authority decides that any of them are unlawful or unenforceable, the remaining conditions will remain in full force and effect. 
+6.5 This Licence, its subject matter and its formation, are governed by English law. You and we both agree to that the courts of England and Wales will have non-exclusive jurisdiction.
+
+
+
+
+
+
+
+
+
+
+
+

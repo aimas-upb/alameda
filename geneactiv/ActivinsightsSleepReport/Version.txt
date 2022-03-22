@@ -1,0 +1,15 @@
+#### Copyright Activinights Limited 2021 ####
+#' Title: Multiple file Sleep Report Markdown
+#'
+#' Description: Completes the Sleep Analysis for Multiple files and outputs the summary metrics for each sleep report
+#'
+#' Version: 1.0.2.
+#'
+#' History of changes: 
+#' 
+#' CS | 31/01/2020 | Initial creation.
+#' CS | 18/06/2020 | GENEAclassify 1.5.1 update.
+#' CS | 22/03/2021 | Adding in correct package installer from url
+
+
+

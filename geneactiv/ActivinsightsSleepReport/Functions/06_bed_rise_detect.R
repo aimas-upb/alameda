@@ -170,7 +170,7 @@ bed_rise_detect <- function(binfile,
       ) # Subs
       
       # Creating my three plots here
-      windows()
+      # windows()
       par(mfrow = c(2, 1)) # Change to 3 if sleep positionals used again
       # Positonals
       start <- tmp2$Start.Time[1]

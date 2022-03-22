@@ -1,0 +1,4 @@
+"","bed_time","rise_time","total_elapsed_time","total_sleep","total_wake","sleep_efficiency","no_active_periods","median_active_period_length","first_wake_after_sleep","non_wear"
+"1",1642981502,1643010112,28285,18383,9902,64.992045253668,112,64.5,1642988260,0
+"2",1643050525,1643109216,58657,7660,50997,13.0589699439112,281,74,1643052242,20624
+"3",1643144400,1643173200,NA,NA,NA,NA,NA,0,0,0

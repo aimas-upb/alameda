@@ -1,0 +1,20 @@
+{
+ "Device_Unique_Serial_Code": "063955",
+"Measurement_Frequency": "50.0",
+"Measurement_Period": "48 Hours",
+"Start_Time": "2022-01-23 17:02:45:000",
+"Study_Centre": "PRECIS              ",
+"Study_Code": "",
+"Investigator_ID": "",
+"Exercise_Type": "",
+"Device_Location_Code": "right wrist",
+"Subject_Code": "asorici             ",
+"Date_of_Birth": "1986-3-27",
+"Sex": "male",
+"Height": "181",
+"Weight": "72",
+"Handedness_Code": "right",
+"Number_of_Pages": "28800",
+"Decimal_Separator": ".",
+"Start_Time_ts": 1.64295e+09 
+}
