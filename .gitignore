@@ -131,3 +131,6 @@ dmypy.json
 # data
 data/
 .Rproj.user
+
+# .idea
+.idea/
