@@ -1,0 +1,11 @@
+sleeppy/__init__.py,sha256=cKhjbnccYboF2tntcUL5FzwD_iERaYqbuAcdkgnD9H4,128
+sleeppy/sleep.py,sha256=jLsgeBd77DpfEf2c2BNPePXCjRmZCrfkk2fMoCTjTL4,54357
+sleeppy/version.py,sha256=m9_1KefTR45tFQbM_Jl1pVtilMnN7jS7SWQnPYNpBxA,23
+sleeppy/tests/__init__.py,sha256=CA_08LcI8CHOEQ6kbmhcmhezOx7s5sVGbydYFkxilto,26
+sleeppy/tests/demo.bin,sha256=LNE6yxkrJGoJhEp2S60kQeaBRBHyQuaE2JBKIIp21I8,96265227
+sleeppy/tests/demo.py,sha256=i_6yau1UZhhYxIQAePZThyHmZvsIRdUw3mbhxlRktbw,2321
+sleeppy-0.2.21.dist-info/LICENSE.md,sha256=3WA4Nxd3GlQOTKQkQdFMZDUK22utIVbG02WEX0T_HCo,1075
+sleeppy-0.2.21.dist-info/METADATA,sha256=4OPpP6SrwXTgwu7I2YLB4V9bHj8DLnUz8FfvRvVwUEk,11209
+sleeppy-0.2.21.dist-info/WHEEL,sha256=g3LQva5oS9Ma-DPFwX8R7Ke-NO25KWW489RoZdNxJXc,92
+sleeppy-0.2.21.dist-info/top_level.txt,sha256=InmkQmDZDW11p4VO_dis9GlM2Q1b154KTtJnIpX0MOw,8
+sleeppy-0.2.21.dist-info/RECORD,,
