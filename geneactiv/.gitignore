@@ -1,3 +1,12 @@
 *.RData
 *.Rhistory
 *.idea/
+*.tar.gz
+*.zip
+*.png
+test_results/
+seg_tests/
+*/Data
+*/Outputs
+**/*.csv
+**/*.png
