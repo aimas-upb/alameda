@@ -1,6 +1,10 @@
 FROM python:3-alpine
 
 RUN mkdir -p /usr/src/app
+
+RUN mkdir -p /usr/src/app/data/input_dir
+RUN mkdir -p /usr/src/app/data/output_dir
+
 WORKDIR /usr/src/app
 
 COPY requirements.txt /usr/src/app/
