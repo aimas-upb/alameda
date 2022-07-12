@@ -434,7 +434,7 @@ if __name__ == "__main__":
 
     pre_processed_data_path = "data" + os.path.sep + "preprocessed"
     extracted_features_data_path = "data" + os.path.sep + "features"
-    dataset_data_path = "data" + os.path.sep + "dataset"
+    dataset_data_path = "data" + os.path.sep + "dataset_simplified"
     
     if args.config_level <= 0:
         # compute and align the trial data which has values from all 3 sensor locations and which is aligned with
@@ -554,18 +554,32 @@ if __name__ == "__main__":
         
         # compute training dataset
         for subject_id in all_subject_ids:
+            # get the EMA questionnaire data first
             subject_ema_df = ema_df[ema_df["ID"] == subject_id].copy()
             subject_ema_df["day"] = (subject_ema_df["beep_time_start"].apply(lambda x: pd.Timestamp(x))
                                      - pd.Timestamp(subject_ema_df["beep_time_start"].iloc[0])).apply(lambda dt: dt.days) + 1
-            subject_ema_df["day_period"] = subject_ema_df["beep_time_start"].apply(get_day_period)
 
-            subject_ema_dataset = subject_ema_df[all_predictors + ["day", "day_period"]].\
-                groupby(by=["day", "day_period"]).agg(["min", "max", "mean"]).reset_index()
+            subject_ema_dataset = subject_ema_df[all_predictors + ["day"]].\
+                groupby(by=["day"]).agg(["min", "max", "median"]).reset_index()
             subject_ema_dataset.columns = subject_ema_dataset.columns.to_flat_index()
             subject_ema_dataset.columns = map(lambda x: "_".join(list(x)) if x[1] else x[0],
                                               subject_ema_dataset.columns.to_list())
 
+            # get the avg and std over the tremor and dyskensia features too
+            subject_wearable_features_file = os.path.join(extracted_features_data_path,
+                                                           "%s_wearable_features.csv" % str(subject_id))
+            subject_wearable_features_df = pd.read_csv(subject_wearable_features_file, index_col=0,
+                                                       parse_dates=True, infer_datetime_format=True)
+            subject_wearable_features_df["day"] = (subject_wearable_features_df.index
+                                                   - subject_wearable_features_df.index[0]).days + 1
+
+            subject_wearables_dataset = subject_wearable_features_df.groupby(by=["day"]).agg(["mean", "std"]).reset_index()
+            subject_wearables_dataset.columns = subject_wearables_dataset.columns.to_flat_index()
+            subject_wearables_dataset.columns = map(lambda x: "_".join(list(x)) if x[1] else x[0],
+                                                    subject_wearables_dataset.columns.to_list())
+
             subject_ema_dataset.to_csv(os.path.join(dataset_data_path, str(subject_id) + '_ema_dataset.csv'))
+            subject_wearables_dataset.to_csv(os.path.join(dataset_data_path, str(subject_id) + '_wearables_dataset.csv'))
         
         print(" ######## DONE DATASET SETUP ########")
         print("")
