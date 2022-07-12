@@ -1,0 +1,4277 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ALAMEDAOntologyProject#"
+     xml:base="http://www.semanticweb.org/ALAMEDAOntologyProject"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:time="http://www.semanticweb.org/ALAMEDAOntologyProject#time:"
+     xmlns:time1="http://www.w3.org/2006/time#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#entry -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#entry"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#hasfeature -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#hasfeature"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#containsAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#containsAssessment">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#detects -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#detects">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#duration -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#duration">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#endtime -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#endtime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#forPatient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#forPatient">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#hasAgent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#hasAgent">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#isAgentIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#hasClinicalDiagnosis -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#hasClinicalDiagnosis">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#hasDisease -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#hasDisease">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#hasGender -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#hasGender"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#hasLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#hasReported -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#hasReported">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#hasType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#hasType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#hosts -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#hosts">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#implements -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#implements">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#isAgentIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#isAgentIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#isFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#isFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#isHostedby -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#isHostedby"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#madeBySensor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#madeBySensor"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#observedProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#observedProperty"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#observes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#observes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#possibleContributingFactor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#possibleContributingFactor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#roomLocalisation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#roomLocalisation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#startTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#startTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;acts_on_property&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;acts_on_property&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;deployed_on_platform&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;deployed_on_platform&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;deployed_system&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;deployed_system&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;for_property&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;for_property&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;has_deployment&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;has_deployment&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;has_input&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;has_input&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;has_output&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;has_output&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;has_property&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;has_property&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;has_result&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;has_result&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;implemented_by&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;implemented_by&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;in_deployment&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;in_deployment&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;is_acted_on_by&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;is_acted_on_by&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;is_observed_by&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;is_observed_by&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;is_property_of&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;is_property_of&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;is_proxy_for&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;is_proxy_for&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;is_result_of&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;is_result_of&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;made_observation&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;made_observation&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;used_procedure&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;used_procedure&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;was_originated_by&apos; -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;was_originated_by&apos;">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:after -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:after">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:before -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:before">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:dayOfWeek -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:dayOfWeek">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:hasBeginning -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:hasBeginning">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:hasDateTimeDescription -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:hasDateTimeDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:hasDurationDescription -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:hasDurationDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:hasEnd -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:hasEnd">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:inDateTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:inDateTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:inside -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:inside">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalAfter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalAfter">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalBefore -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalBefore">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalContains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalContains">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalDuring -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalDuring">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalEquals -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalEquals">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalFinishedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalFinishedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalFinishes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalFinishes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalMeets -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalMeets">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalMetBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalMetBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalOverlappedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalOverlappedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalOverlaps -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalOverlaps">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalStartedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalStartedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalStarts -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:intervalStarts">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:timeZone -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:timeZone">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:unitType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:unitType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#DateofBirth -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#DateofBirth">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#EmailAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#EmailAddress">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HandMovement -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HandMovement">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HomeAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HomeAddress">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ID"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#LateNightAwakening -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#LateNightAwakening">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Nationality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Nationality">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ObservationType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ObservationType">
+        <rdfs:comment>Is it Continuous or Discrete?</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SuccessfulCompliantOfInstructions -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SuccessfulCompliantOfInstructions">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#VariableType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#VariableType">
+        <rdfs:comment>Is it predictor or inferred?</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#date">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#end_date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#end_date"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#first_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#first_name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#hasResult -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#hasResult"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#hasUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#hasUnit"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#height -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#height">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#last_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#last_name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#phone_number -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#phone_number">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#preffered_way_of_communication -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#preffered_way_of_communication">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#repititions -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#repititions">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#score -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#score">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#stepLength -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#stepLength">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#stressLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#stressLevel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#type -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#type">
+        <rdfs:comment>Is it CAO, PM, Ehealth or PRO?</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#walkingSpeed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#walkingSpeed">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#weight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#weight">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#DS/NDS -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#DS/NDS">
+        <rdfs:comment>Disease/No Disease:Helps the non professionals understand what variables are resulting directly from the disease.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:day -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:day">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:dayOfYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:dayOfYear">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:days -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:days">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:hour -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:hour">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:hours -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:hours">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:inXSDDateTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:inXSDDateTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:minute -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:minute">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:minutes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:minutes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:months -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:months">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:second -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:second">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:seconds -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:seconds">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:week -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:week">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:weeks -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:weeks">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:xsdDateTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:xsdDateTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:year">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:years -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:years">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#month -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/time#month">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#start_date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/time#start_date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ACTIVLIM -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ACTIVLIM">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ADLDifficulties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ADLDifficulties">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ReportedDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ADLSummary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ADLSummary">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/2006/time#DaySummary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#AMSQ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#AMSQ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Access -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Access">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#TechnologyUse"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#UsingTechnologies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Activity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Activity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ActivityStatusType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ActivityStatusType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#AnswerPhoneCall -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#AnswerPhoneCall">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#TelephoneInteraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#App-Wellics-CTL-UNIC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#App-Wellics-CTL-UNIC">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#FixedSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#AtomicActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#AtomicActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#AwakingProblem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#AwakingProblem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#BECK_ANXIETY_INVENTORY -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#BECK_ANXIETY_INVENTORY">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#EmotionalStatusAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#BVMT-R -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#BVMT-R">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MentalAbilityAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Barcode_scanning_for_prepackaged_foods -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Barcode_scanning_for_prepackaged_foods">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#App-Wellics-CTL-UNIC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Barthel_Index -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Barthel_Index">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#QualityOfLifeAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Basic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Basic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#EducationalLevel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Bathroom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Bathroom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Indoor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Beach -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Beach">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#FreeTimeActivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#BedExit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#BedExit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ComplexActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Bedroom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Bedroom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Indoor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#BeltSensor-NTNU -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#BeltSensor-NTNU">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#WearableSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#BergBalanceScale -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#BergBalanceScale">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#CVLT-II -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#CVLT-II">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MentalAbilityAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#CarDriver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#CarDriver">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#TransportActivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#CarPassenger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#CarPassenger">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#TransportActivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Caregiver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Caregiver">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ChatbotActivities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ChatbotActivities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#App-Wellics-CTL-UNIC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Cleaning -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Cleaning">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ComplexActivity"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HouseAcitivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Clinician -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Clinician">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Close -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Close">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Door"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Closed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Closed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ObjectEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ComplexActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ComplexActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ConsumptionActivities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ConsumptionActivities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ADLDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#CountingType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#CountingType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Covid19 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Covid19">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ReportedDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#CovidQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#CovidQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Questionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#CulturalActivities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#CulturalActivities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#FreeTimeActivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#DailyRating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#DailyRating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#DemographicQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#DemographicQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Questionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Deployment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Deployment">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;deployed_on_platform&apos;"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;for_property&apos;"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Property"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>SOSA/SSN</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Depression -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Depression">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Mood"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#DiagnosisType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#DiagnosisType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#DialNumber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#DialNumber">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#AtomicActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#DiaryOfMotorCondition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#DiaryOfMotorCondition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#DietHabitsEhealth -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#DietHabitsEhealth">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#QualityOfLifeAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#DietHabitsPro -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#DietHabitsPro">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#QualityOfLifeAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#DigitalQuestionnairesSelfAssessed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#DigitalQuestionnairesSelfAssessed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#App-Wellics-CTL-UNIC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#DirectedTask -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#DirectedTask">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#DiscussionTask -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#DiscussionTask">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Dizziness_and_Balance_questionnaire -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Dizziness_and_Balance_questionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#DomainAssessment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#DomainAssessment">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#endtime"/>
+                <owl:someValuesFrom rdf:resource="https://www.w3.org/2006/time#DateTimeDescription"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#hasAgent"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Patient"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#startTime"/>
+                <owl:someValuesFrom rdf:resource="https://www.w3.org/2006/time#DateTimeDescription"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#score"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#score"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#score"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#time:xsdDateTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>This class represents the results of the tests. (Lab Module)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Door -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Door">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ComplexActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#DoorClosed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#DoorClosed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Closed"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#DoorOpened -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#DoorOpened">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Opened"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#EDSS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#EDSS">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#EPWORTH_SLEEPINESS_SCALE_ATHENS_INSOMNIA_SCALE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#EPWORTH_SLEEPINESS_SCALE_ATHENS_INSOMNIA_SCALE">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDisorderAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Eat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Eat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#AtomicActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#EducationalLevel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#EducationalLevel"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#EmotionalStatusAssessment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#EmotionalStatusAssessment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#DomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#EmotionalStatusData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#EmotionalStatusData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MeasuredData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Entity">
+        <rdfs:comment>This class is used to represent any physical entity in the ALAMEDA Domain.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Event">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#duration"/>
+                <owl:someValuesFrom rdf:resource="https://www.w3.org/2006/time#DurationDescription"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#endtime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#time:Instant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#startTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#time:Instant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>This is the top-level class of the event hierarchy.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ExerciseDifficulties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ExerciseDifficulties">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ReportedDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#FAST -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#FAST">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MentalAbilityAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#FaceToFaceInteraction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#FaceToFaceInteraction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#PRDifficulties"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SocialInteraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Facial_Expression_Analysis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Facial_Expression_Analysis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#EmotionalStatusAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#FallingAsleep -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#FallingAsleep">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#FixedSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#FixedSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#FoodConsumption -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#FoodConsumption">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ComplexActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#FreeTimeActivities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#FreeTimeActivities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ComplexActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#GERIATRIC_DEPRESSION_SCALE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#GERIATRIC_DEPRESSION_SCALE">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#EmotionalStatusAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Games-_CERTH -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Games-_CERTH">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#FixedSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Gender -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Gender"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#GenderType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#GenderType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#GoingToChurch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#GoingToChurch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SettingActivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#GoingToCinema -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#GoingToCinema">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SettingActivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#GoingToGym -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#GoingToGym">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SettingActivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ-9 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ-9">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#EmotionalStatusAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HalfHourIntenseWalk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HalfHourIntenseWalk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HangingUpThePhone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HangingUpThePhone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HouseAcitivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HavingMeal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HavingMeal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ConsumptionActivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Higher -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Higher">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#EducationalLevel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HobbiesDifficulties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HobbiesDifficulties">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ReportedDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HouseAcitivities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HouseAcitivities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ADLDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#INTERMITTENT_SLEEP_MONITORING -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#INTERMITTENT_SLEEP_MONITORING">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDisorderAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#InLocation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#InLocation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#AtomicActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#InRoom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#InRoom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#InLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Index_PSQI -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Index_PSQI">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDisorderAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Indoor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Indoor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Input -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Input">
+        <rdfs:comment>SOSA/SSN</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Isolation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Isolation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#PRDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#KeystrokeDynamics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#KeystrokeDynamics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MentalAbilityAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Kitchen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Kitchen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Indoor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#LABORATORY_INVESTIGATION_OF_AUTONOMIC_FUNCTION -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#LABORATORY_INVESTIGATION_OF_AUTONOMIC_FUNCTION">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Language -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Language"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#LateralityType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#LateralityType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#LineTrackingTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#LineTrackingTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Location">
+        <rdfs:comment>SOSA/SSN</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#LocationMonitoring -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#LocationMonitoring">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#FixedSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS-I -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS-I">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MentalAbilityAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRSII -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRSII">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRSIII -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRSIII">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRSIV -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRSIV">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#QualityOfLifeAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MOCA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MOCA">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MentalAbilityAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MRC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MRC">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MRS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MRS">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#QualityOfLifeAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MSWS-12 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MSWS-12">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MaintainingSleepDuringTheNight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MaintainingSleepDuringTheNight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MakePhoneCall -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MakePhoneCall">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#TelephoneInteraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MattressSleep-ENORA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MattressSleep-ENORA">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#FixedSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Meal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Meal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#FoodConsumption"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MeasuredData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MeasuredData">
+        <rdfs:comment>This class indicates the type/characteristics of the data of the tests.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MedicalPractitioner -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MedicalPractitioner">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MentalAbilityAssessment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MentalAbilityAssessment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#DomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MentalAbilityData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MentalAbilityData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MeasuredData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MeasuredData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#DomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Modified_Ashworth -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Modified_Ashworth">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MonitoringAppsUsage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MonitoringAppsUsage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#App-Wellics-CTL-UNIC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MonitoringUsersActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MonitoringUsersActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#App-Wellics-CTL-UNIC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Mood -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Mood">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ReportedDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MoodQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MoodQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Questionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Mountain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Mountain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#FreeTimeActivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#NHPT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#NHPT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#NIHSSscale -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#NIHSSscale">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#QualityOfLifeAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Nap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Nap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ComplexActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#NapDuringTheDay -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#NapDuringTheDay">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#NappingDuringTheDay -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#NappingDuringTheDay">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#NightBathroomVisits -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#NightBathroomVisits">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#NightSleep -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#NightSleep">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nap"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#OAB-Q -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#OAB-Q">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ObjectEvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ObjectEvent">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#startTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#time:Instant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>This class indicates the events of the objects that are monitored.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Observation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Observation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#observedProperty"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;has_result&apos;"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Result"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;used_procedure&apos;"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Procedure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;was_originated_by&apos;"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Stimulus"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#observedProperty"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;has_result&apos;"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;was_originated_by&apos;"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>SOSA/SSN</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Open -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Open">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Door"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Opened -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Opened">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ObjectEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Outdoor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Outdoor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Output -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Output">
+        <rdfs:comment>SOSA/SSN</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PDQ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PDQ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MentalAbilityAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PDQ39_OR_PDQ8 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PDQ39_OR_PDQ8">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#QualityOfLifeAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PD_SLEEP_SCALE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PD_SLEEP_SCALE">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDisorderAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#POLYSOMNOGRAPHY -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#POLYSOMNOGRAPHY">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDisorderAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PRDifficulties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PRDifficulties">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ReportedDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PVR -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PVR">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#QualityOfLifeAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Patient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Patient">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PatientsMood -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PatientsMood">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Covid19"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Person">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PersonalHygiene -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PersonalHygiene">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ADLDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PersonalOfficeVisit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PersonalOfficeVisit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SettingActivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PhysicalActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PhysicalActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#AtomicActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PhysicalActivityAmount -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PhysicalActivityAmount">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PhysicalActivityAmountBouts -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PhysicalActivityAmountBouts">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PickUpPhone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PickUpPhone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ComplexActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Place -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Place">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Platform -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Platform">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#hosts"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Sensor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;in_deployment&apos;"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Deployment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>SOSA/SSN</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PreparationDifficulties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PreparationDifficulties">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ADLDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PrepareFood -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PrepareFood">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ComplexActivity"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#PreparationDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Procedure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Procedure">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;has_input&apos;"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Input"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;has_output&apos;"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Output"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>SOSA/SSN</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Professional -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Professional">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Caregiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Property -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Property">
+        <rdfs:comment>SOSA/SSN</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#QualityOfLifeAssessment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#QualityOfLifeAssessment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#DomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#QualityOfLifeData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#QualityOfLifeData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MeasuredData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#QuarantineEffects -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#QuarantineEffects">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Covid19"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Questionnaire -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Questionnaire">
+        <rdfs:comment>This class serves as the top-level class of the possible questionnaire types that are filled by the patient for eliciting self-assessment data.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#RBD_QUESTIONAIRE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#RBD_QUESTIONAIRE">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDisorderAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Radboud_Dysarthria_Assessment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Radboud_Dysarthria_Assessment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#QualityOfLifeAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ReportedDifficulties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ReportedDifficulties">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#hasAgent"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Patient"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#possibleContributingFactor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>This class is used to represent information about the reported difficulties that the patient may have in his daily life and are essential to be recorded.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Result -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Result">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;is_result_of&apos;"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>SOSA/SSN</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Romberg -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Romberg">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Run -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Run">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#AtomicActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Running -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Running">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ExerciseDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SCOPA-AUTONOMIC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SCOPA-AUTONOMIC">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#QualityOfLifeAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SDMT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SDMT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MentalAbilityAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ScooterPassenger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ScooterPassenger">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#TransportActivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ScooterRiding -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ScooterRiding">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#TransportActivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Scopa-Autonomic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Scopa-Autonomic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Self-assesed_questionaire_for_muscle_tone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Self-assesed_questionaire_for_muscle_tone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SelfieCamera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SelfieCamera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#VideoMonitoring-UNIC-CTL"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SemiDirectedTask -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SemiDirectedTask">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Sensor">
+        <rdfs:comment>This class represents the possible types of sensors that are used by the system.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SettingActivities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SettingActivities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ComplexActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SettingActivitiesDifficulties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SettingActivitiesDifficulties">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ReportedDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ShoePressureSensor-UPB -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ShoePressureSensor-UPB">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#WearableSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SittingOnCouch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SittingOnCouch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ComplexActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Sleep -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Sleep">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#AtomicActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDifficulties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDifficulties">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ReportedDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDisorderAssessment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDisorderAssessment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#DomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDisordersData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDisordersData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MeasuredData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SleepPatterns -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SleepPatterns">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SleepDisorderAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SleepQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SleepQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Questionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SmartBracelet-UPB-NTNU -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SmartBracelet-UPB-NTNU">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#WearableSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SmartWatchWellics-ICCS-ENORA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SmartWatchWellics-ICCS-ENORA">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#WearableSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SocialInteraction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SocialInteraction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ComplexActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Speak -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Speak">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#AtomicActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SportActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SportActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#FreeTimeActivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Stabilometry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Stabilometry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#StepCount -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#StepCount">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#StepCounting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#StepCounting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#AtomicActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#StepLength -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#StepLength">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Stimulus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Stimulus">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;is_proxy_for&apos;"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>SOSA/SSN</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Stress -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Stress">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Mood"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#T25-FW -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#T25-FW">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#TabletUse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#TabletUse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#TechnologyUse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#TakingBus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#TakingBus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#TransportActivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Task -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Task">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#duration"/>
+                <owl:someValuesFrom rdf:resource="https://www.w3.org/2006/time#DurationDescription"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#possibleContributingFactor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#endtime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#time:Instant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#startTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#time:Instant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#TechnologyUse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#TechnologyUse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ComplexActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#TelephoneInteraction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#TelephoneInteraction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#PRDifficulties"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SocialInteraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#TimeSpentInBathroom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#TimeSpentInBathroom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#PersonalHygiene"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Trained -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Trained">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Caregiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#TransportActivities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#TransportActivities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ComplexActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#TransportDifficulties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#TransportDifficulties">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ReportedDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Type"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Usability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Usability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#TechnologyUse"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#UsingTechnologies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#UsePC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#UsePC">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#TechnologyUse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#UsingPC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#UsingPC">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#UsingTechnologies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#UsingTablet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#UsingTablet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#UsingTechnologies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#UsingTaxi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#UsingTaxi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#TransportActivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#UsingTechnologies -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#UsingTechnologies">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ADLDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#UsingTrain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#UsingTrain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#TransportActivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ValidatedQuestionnaires -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ValidatedQuestionnaires">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#App-Wellics-CTL-UNIC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#VerbalFluency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#VerbalFluency">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MentalAbilityAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#VideoMonitoring-UNIC-CTL -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#VideoMonitoring-UNIC-CTL">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#FixedSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#VirtualSupermarketTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#VirtualSupermarketTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MentalAbilityAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#VisitPublicOffices -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#VisitPublicOffices">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SettingActivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Volunteer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Volunteer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Caregiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Walk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Walk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#AtomicActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Walking -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Walking">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ExerciseDifficulties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Walkingpattern -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Walkingpattern">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#WearableSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#WearableSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#WindowClosed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#WindowClosed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Closed"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#WindowOpened -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#WindowOpened">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Opened"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;Communication_Outcome_after_Stroke_(COAST)_scale&apos; -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#&apos;Communication_Outcome_after_Stroke_(COAST)_scale&apos;">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#EmotionalStatusAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#10MeterWalkTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#10MeterWalkTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#6MWT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#6MWT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HOEHN_&amp;_YAHR -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HOEHN_&amp;_YAHR">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MobilityDomainAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SCHWABB&amp;ENGLAND -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SCHWABB&amp;ENGLAND">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#QualityOfLifeAssessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#VisitFriend&apos;sHouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#VisitFriend&apos;sHouse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SettingActivities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:DateTimeInterval -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:DateTimeInterval">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#time:ProperInterval"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:Instant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:Instant">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#duration"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://www.w3.org/2006/time#DurationDescription"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#endtime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#time:Instant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:Interval -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:Interval">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/2006/time#TemporalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:Month -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:Month">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/2006/time#DurationDescription"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:ProperInterval -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:ProperInterval">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#time:Interval"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:WholeProject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:WholeProject">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/2006/time#DurationDescription"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#time:week -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#time:week">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/2006/time#DurationDescription"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.w3.org/2006/time#DateTimeDescription -->
+
+    <owl:Class rdf:about="https://www.w3.org/2006/time#DateTimeDescription"/>
+    
+
+
+    <!-- https://www.w3.org/2006/time#DayOfWeek -->
+
+    <owl:Class rdf:about="https://www.w3.org/2006/time#DayOfWeek"/>
+    
+
+
+    <!-- https://www.w3.org/2006/time#DaySummary -->
+
+    <owl:Class rdf:about="https://www.w3.org/2006/time#DaySummary">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#forPatient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Patient"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#date"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>This class provides information about the performance of patients in daily activities.(Home Module)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.w3.org/2006/time#DurationDescription -->
+
+    <owl:Class rdf:about="https://www.w3.org/2006/time#DurationDescription"/>
+    
+
+
+    <!-- https://www.w3.org/2006/time#TemporalEntity -->
+
+    <owl:Class rdf:about="https://www.w3.org/2006/time#TemporalEntity"/>
+    
+
+
+    <!-- https://www.w3.org/2006/time#TemporalUnit -->
+
+    <owl:Class rdf:about="https://www.w3.org/2006/time#TemporalUnit"/>
+    
+
+
+    <!-- https://www.w3.org/2006/time#TimeZone -->
+
+    <owl:Class rdf:about="https://www.w3.org/2006/time#TimeZone"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/StepCount_Nikos1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/StepCount_Nikos1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#StepCount"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#step_count"/>
+        <end_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-19T10:15:00</end_date>
+        <hasUnit rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">steps</hasUnit>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5000</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-19T10:00:00</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#DailyRating_Thodoris1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#DailyRating_Thodoris1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#DailyRating"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ESSAIS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ESSAIS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ESSAIS_Nikos1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ESSAIS_Nikos1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#EPWORTH_SLEEPINESS_SCALE_ATHENS_INSOMNIA_SCALE"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ESSAIS"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">13</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-08-10T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ESSAIS_Nikos2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ESSAIS_Nikos2">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ESSAIS"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-05-10T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ESSAIS_Xristoniki1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ESSAIS_Xristoniki1">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ESSAIS"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">22</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-08-10T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ESSAIS_Xristoniki2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ESSAIS_Xristoniki2">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ESSAIS"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-05-10T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Female -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Female">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Gender"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Friday -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Friday">
+        <rdf:type rdf:resource="https://www.w3.org/2006/time#DayOfWeek"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HHIW -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HHIW">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</score>
+        <time1:month rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</time1:month>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos1">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">22</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-20T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos10">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">22</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-20T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos11 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos11">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">25</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-10-20T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos12 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos12">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">26</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-20T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos13 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos13">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">24</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-11-20T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos2">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">23</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-20T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos3">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">25</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-02-20T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos4">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-03-20T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos5">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">26</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-04-20T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos6">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">25</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-05-20T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos7">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">24</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-06-20T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos8 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos8">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">23</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-07-20T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos9 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9_Nikos9">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HPQ9"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">23</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-08-20T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Hhiw_Xristoniki1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Hhiw_Xristoniki1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HalfHourIntenseWalk"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <madeBySensor rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SmartWatch"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HHIW"/>
+        <time:dayOfWeek rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Monday"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Hhiw_Xristoniki2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Hhiw_Xristoniki2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HalfHourIntenseWalk"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <madeBySensor rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SmartWatch"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HHIW"/>
+        <time:dayOfWeek rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Tuesday"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Hhiw_Xristoniki3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Hhiw_Xristoniki3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HalfHourIntenseWalk"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <madeBySensor rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SmartWatch"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HHIW"/>
+        <time:dayOfWeek rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Wednesday"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Hhiw_Xristoniki4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Hhiw_Xristoniki4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HalfHourIntenseWalk"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <madeBySensor rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SmartWatch"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HHIW"/>
+        <time:dayOfWeek rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Thursday"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Hhiw_Xristoniki5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Hhiw_Xristoniki5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HalfHourIntenseWalk"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <madeBySensor rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SmartWatch"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HHIW"/>
+        <time:dayOfWeek rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Friday"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Hhiw_Xristoniki6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Hhiw_Xristoniki6">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HalfHourIntenseWalk"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <madeBySensor rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SmartWatch"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HHIW"/>
+        <time:dayOfWeek rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Saturday"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Hhiw_Xristoniki7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Hhiw_Xristoniki7">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HalfHourIntenseWalk"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <madeBySensor rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SmartWatch"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#HHIW"/>
+        <time:dayOfWeek rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Sunday"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS_I -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS_I">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS_I_Nikos1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS_I_Nikos1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS-I"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS_I"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-05-28T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS_I_Nikos2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS_I_Nikos2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS-I"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS_I"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">11</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-08-28T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS_I_Thodoris -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS_I_Thodoris">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS-I"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Thodoris"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS_I"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-06-28T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS_I_Xristoniki1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS_I_Xristoniki1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS-I"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS_I"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-05-28T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS_I_Xristoniki2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS_I_Xristoniki2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS-I"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS_I"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-08-28T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MDS_UPDRS_I_Thodoris2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS_UPDRS_I_Thodoris2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS-I"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Thodoris"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MDS-UPDRS_I"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-28T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS_Nikos1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS_Nikos1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-24T21:32:52</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS_Nikos2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS_Nikos2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-20T21:32:52</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS_Thodoris1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS_Thodoris1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Thodoris"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-22T21:32:52</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS_Thodoris2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS_Thodoris2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Thodoris"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MFIS"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-24T21:32:52</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MRC -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MRC">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MRC_Nikos1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MRC_Nikos1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MRC"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MRC"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#MRC_Thodoris1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#MRC_Thodoris1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MRC"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Thodoris"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MRC"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Male -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Male">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Gender"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Moca -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Moca">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Moca_Nikos1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Moca_Nikos1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MOCA"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Moca"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">25</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-06-01T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Moca_Thodoris1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Moca_Thodoris1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#MOCA"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Thodoris"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Moca"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-01T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ModAsh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ModAsh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ModAsh_Nikos1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ModAsh_Nikos1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Modified_Ashworth"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ModAsh"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#ModAsh_Thodoris1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#ModAsh_Thodoris1">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Thodoris"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ModAsh"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Monday -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Monday">
+        <rdf:type rdf:resource="https://www.w3.org/2006/time#DayOfWeek"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#NIHSS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#NIHSS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#NIHSS_Nikos -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#NIHSS_Nikos">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#NIHSSscale"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#NIHSS"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#NIHSS_Thodoris -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#NIHSS_Thodoris">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#NIHSSscale"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Thodoris"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#NIHSS"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#NIHSS_Xristoniki -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#NIHSS_Xristoniki">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#NIHSSscale"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#NIHSS"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">18</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Patient"/>
+        <hasGender rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Male"/>
+        <hasReported rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Pasta_Preperation"/>
+        <ID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</ID>
+        <Nationality rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Greek</Nationality>
+        <height rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">177cm</height>
+        <preffered_way_of_communication rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Face to face Interaction</preffered_way_of_communication>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Other -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Other">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Gender"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI_Nikos1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI_Nikos1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Index_PSQI"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">17</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-07-29T10:00:00</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI_Nikos2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI_Nikos2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Index_PSQI"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">15</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-08-29T10:00:00</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI_Nikos3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI_Nikos3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Index_PSQI"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">13</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-29T10:00:00</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI_Nikos4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI_Nikos4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Index_PSQI"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-10-29T10:00:00</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI_Nikos5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI_Nikos5">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-06-29T10:00:00</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI_Xristoniki1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI_Xristoniki1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Index_PSQI"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-07-29T10:00:00</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI_Xristoniki2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI_Xristoniki2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Index_PSQI"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-08-29T10:00:00</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI_Xristoniki3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI_Xristoniki3">
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-29T10:00:00</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI_Xristoniki4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI_Xristoniki4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Index_PSQI"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#PSQI"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">21</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-10-29T10:00:00</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Pasta_Preperation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Pasta_Preperation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#PrepareFood"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#ReportedDifficulties"/>
+        <possibleContributingFactor rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Pasta_Preperation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#RBD -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#RBD">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#RBD_Nikos1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#RBD_Nikos1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#RBD_QUESTIONAIRE"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#RBD"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-08-28T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#RBD_Nikos2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#RBD_Nikos2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#RBD_QUESTIONAIRE"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#RBD"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">15</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-28T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#RBD_Thodoris -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#RBD_Thodoris">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#RBD_QUESTIONAIRE"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Thodoris"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#RBD"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-02-18T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#RBD_Thodoris1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#RBD_Thodoris1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#RBD_QUESTIONAIRE"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Thodoris"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#RBD"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-08-28T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#RBD_Thodoris2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#RBD_Thodoris2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#RBD_QUESTIONAIRE"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Thodoris"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#RBD"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-28T23:59:59</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#RDA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#RDA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#RDA_Nikos1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#RDA_Nikos1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Radboud_Dysarthria_Assessment"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#RDA"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Romberg -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Romberg">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Romberg_Xristoniki1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Romberg_Xristoniki1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Romberg"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Romberg"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Positive</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Saturday -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Saturday">
+        <rdf:type rdf:resource="https://www.w3.org/2006/time#DayOfWeek"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#SmartWatch -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#SmartWatch">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#WearableSensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#StepCount_Nikos2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#StepCount_Nikos2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#StepCount"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#step_count"/>
+        <end_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-24T10:15:00</end_date>
+        <hasUnit rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">steps</hasUnit>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8000</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-24T10:00:00</time1:start_date>
+        <entry rdf:datatype="http://www.w3.org/2001/XMLSchema#int">300</entry>
+        <hasfeature rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#StepCount_Xristoniki2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#StepCount_Xristoniki2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#StepCount"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#step_count"/>
+        <end_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-25T10:15:00</end_date>
+        <hasUnit rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">steps</hasUnit>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4000</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-24T10:00:00</time1:start_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Sunday -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Sunday">
+        <rdf:type rdf:resource="https://www.w3.org/2006/time#DayOfWeek"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Thodoris -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Thodoris">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Patient"/>
+        <hasGender rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Male"/>
+        <ID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</ID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Thursday -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Thursday">
+        <rdf:type rdf:resource="https://www.w3.org/2006/time#DayOfWeek"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Tuesday -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Tuesday">
+        <rdf:type rdf:resource="https://www.w3.org/2006/time#DayOfWeek"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#WalkingPattern -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#WalkingPattern">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#WalkingPattern_Xristoniki1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#WalkingPattern_Xristoniki1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Walkingpattern"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#WalkingPattern"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Wednesday -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Wednesday">
+        <rdf:type rdf:resource="https://www.w3.org/2006/time#DayOfWeek"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Patient"/>
+        <hasGender rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Female"/>
+        <ID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</ID>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#int">168</height>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki_SmartWatch -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki_SmartWatch">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SmartWatchWellics-ICCS-ENORA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#alameda_platform -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#alameda_platform">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Platform"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#heart_rate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#heart_rate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#heart_rate_measurement_Nikos1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#heart_rate_measurement_Nikos1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observation"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Nikos"/>
+        <madeBySensor rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SmartWatch"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#heart_rate"/>
+        <hasResult rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</hasResult>
+        <time:xsdDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-19T10:00:00</time:xsdDateTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#heart_rate_measurement_Xristoniki1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#heart_rate_measurement_Xristoniki1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observation"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <madeBySensor rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SmartWatch"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#heart_rate"/>
+        <hasResult rdf:datatype="http://www.w3.org/2001/XMLSchema#int">149</hasResult>
+        <time:xsdDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-19T10:00:00</time:xsdDateTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#heart_rate_measurement_Xristoniki2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#heart_rate_measurement_Xristoniki2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observation"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <madeBySensor rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SmartWatch"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#heart_rate"/>
+        <hasResult rdf:datatype="http://www.w3.org/2001/XMLSchema#int">156</hasResult>
+        <time:xsdDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-21T10:00:00</time:xsdDateTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#heart_rate_measurement_Xristoniki3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#heart_rate_measurement_Xristoniki3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observation"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <madeBySensor rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#SmartWatch"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#heart_rate"/>
+        <hasResult rdf:datatype="http://www.w3.org/2001/XMLSchema#int">50</hasResult>
+        <time:xsdDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-23T10:00:00</time:xsdDateTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#step_count -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#step_count">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Observable_Property"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ALAMEDAOntologyProject#step_count_Xristoniki1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ALAMEDAOntologyProject#step_count_Xristoniki1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#StepCount"/>
+        <hasAgent rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#Xristoniki"/>
+        <observedProperty rdf:resource="http://www.semanticweb.org/ALAMEDAOntologyProject#step_count"/>
+        <end_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-19T10:15:00</end_date>
+        <hasUnit rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">steps</hasUnit>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5559</score>
+        <time1:start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-19T10:00:00</time1:start_date>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
