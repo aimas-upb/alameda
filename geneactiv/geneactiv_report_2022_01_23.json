@@ -1,0 +1,121 @@
+{
+    "meta": {
+        "patient_id": "asorici",
+        "device_id": "063955",
+        "measurement_frequency": 50,
+        "start_time": "2022-01-23 17:00:00.",
+        "start_time_ts": 1642950000.0
+    },
+    "activity_summary": [
+        {
+            "provenance": "Activinsights",
+            "data": [
+                {
+                    "day_start": "2022-01-23 03:00:00.+0200",
+                    "day_start_ts": 1642899600.0,
+                    "day_end": "2022-01-24 03:00:00.+0200",
+                    "day_end_ts": 1642986000.0,
+                    "steps": 581,
+                    "non_wear": 0,
+                    "sedentary": 22522,
+                    "sedentary_percent": 0.26,
+                    "light_activity": 0,
+                    "light_activity_percent": 0.0,
+                    "moderate_activity": 905,
+                    "moderate_activity_percent": 0.01,
+                    "vigorous_activity": 0,
+                    "vigorous_activity_percent": 0.0
+                }
+            ]
+        }
+    ],
+    "sleep_summary": [
+        {
+            "provenance": "Activinsights",
+            "data": [
+                {
+                    "night_start": "2022-01-23 15:00:00.+0200",
+                    "night_start_ts": 1642942800.0,
+                    "night_end": "2022-01-24 15:00:00.+0200",
+                    "night_end_ts": 1643029200.0,
+                    "sleep_onset": "2022-01-24 01:45:02.+0200",
+                    "sleep_onset_ts": 1642981502.0,
+                    "rise": "2022-01-24 09:41:52.+0200",
+                    "rise_ts": 1643010112.0,
+                    "total_bed_time": 28285,
+                    "total_sleep_time": 18383,
+                    "waso": 9902,
+                    "first_waso": 6758,
+                    "num_active_periods": 112,
+                    "median_active_len": 64,
+                    "sleep_efficiency": 65.0
+                },
+                {
+                    "night_start": "2022-01-24 15:00:00.+0200",
+                    "night_start_ts": 1643029200.0,
+                    "night_end": "2022-01-25 15:00:00.+0200",
+                    "night_end_ts": 1643115600.0,
+                    "sleep_onset": "2022-01-24 20:55:25.+0200",
+                    "sleep_onset_ts": 1643050525.0,
+                    "rise": "2022-01-25 13:13:36.+0200",
+                    "rise_ts": 1643109216.0,
+                    "total_bed_time": 58657,
+                    "total_sleep_time": 7660,
+                    "waso": 50997,
+                    "first_waso": 1717,
+                    "num_active_periods": 281,
+                    "median_active_len": 74,
+                    "sleep_efficiency": 13.1
+                },
+                {
+                    "night_start": "2022-01-25 15:00:00.+0200",
+                    "night_start_ts": 1643115600.0,
+                    "night_end": "2022-01-26 15:00:00.+0200",
+                    "night_end_ts": 1643202000.0,
+                    "sleep_onset": "2022-01-25 23:00:00.+0200",
+                    "sleep_onset_ts": 1643144400.0,
+                    "rise": "2022-01-26 07:00:00.+0200",
+                    "rise_ts": 1643173200.0,
+                    "total_bed_time": 0,
+                    "total_sleep_time": 0,
+                    "waso": 0,
+                    "first_waso": 0,
+                    "num_active_periods": 0,
+                    "median_active_len": 0,
+                    "sleep_efficiency": 0.0
+                }
+            ]
+        },
+        {
+            "provenance": "SleepPy",
+            "data": [
+                {
+                    "sleep_onset": "2022-01-23 23:41:50.+0200",
+                    "sleep_onset_ts": 1642974110,
+                    "rise": "2022-01-24 05:18:50.+0200",
+                    "rise_ts": 1642994330,
+                    "total_bed_time": 20280,
+                    "total_sleep_time": 19800,
+                    "waso": 8,
+                    "first_waso": 60,
+                    "num_active_periods": 4,
+                    "median_active_len": 120,
+                    "sleep_efficiency": 98
+                },
+                {
+                    "sleep_onset": "2022-01-24 12:28:00.+0200",
+                    "sleep_onset_ts": 1643020080,
+                    "rise": "2022-01-25 11:58:00.+0200",
+                    "rise_ts": 1643104680,
+                    "total_bed_time": 86340,
+                    "total_sleep_time": 44820,
+                    "waso": 664,
+                    "first_waso": 1200,
+                    "num_active_periods": 30,
+                    "median_active_len": 180,
+                    "sleep_efficiency": 52
+                }
+            ]
+        }
+    ]
+}
