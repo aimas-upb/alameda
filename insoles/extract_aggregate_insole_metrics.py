@@ -99,7 +99,29 @@ def get_aggregate_information(filename: str) -> Dict[str, Any]:
                 agg_dict["ablt"] = ablt
                 agg_dict["avg_cadence"] = avg_cadence
 
-    # The rest of the meta information is we extract as a pandas dataframe, reading in rows 21-26 from the tab separated
+    # The rest of the meta information is we extract as a pandas dataframe.
+    # We are first reading in rows 12-18 from the tab separated slg file. The column names are: zones,
+    # above_limit_percent, between_limit_percent, below_limit_percent, upper_force_limit, lower_force_limit,
+    # drop_percent
+    force_limit_df = pd.read_csv(args.input, sep="\t", skiprows=11, nrows=7, header=None,
+                                 names=["zones", "above_limit_percent", "between_limit_percent", "below_limit_percent",
+                                        "upper_force_limit", "lower_force_limit", "drop_percent"])
+    # replace the values of the zones column with the zone names: ["left_heel", "left_forefoot", "left",
+    # "right_heel", "right_forefoot", "right", "total"]
+    force_limit_df["zones"] = ["left_heel", "left_forefoot", "left", "right_heel", "right_forefoot", "right", "total"]
+
+    # drop column drop_percent
+    force_limit_df = force_limit_df.drop("drop_percent", axis=1)
+
+    # convert all columns to numeric
+    force_limit_df = force_limit_df.apply(pd.to_numeric, errors="ignore")
+
+    # convert the dataframe to a dictionary, by having the zones column as a first level key and
+    # the column names as second level keys
+    force_limit_dict = force_limit_df.set_index("zones").T.to_dict("index")
+    agg_dict.update(force_limit_dict)
+
+    # Then we are reading in rows 21-26 from the tab separated
     # slg file. The column names are: zones, steps, avg_contact_time, avg_peak_force, avg_loading_rate, fti,
     # forefoot_percent, midfoot_percent and heel_percent. All columns are numeric.
     agg_df = pd.read_csv(args.input, sep="\t", skiprows=20, nrows=7, header=None,
