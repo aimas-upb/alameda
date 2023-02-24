@@ -8,6 +8,8 @@ import pandas as pd
 from typing import Dict, Any, Tuple
 from datetime import datetime, time
 import json
+import yaml
+import requests
 
 def get_aggregate_information(filename: str) -> Dict[str, Any]:
     """
@@ -145,10 +147,103 @@ def get_aggregate_information(filename: str) -> Dict[str, Any]:
     return agg_dict
 
 
+def iam_login(iam_config_file: str = "iam_config.yaml") -> Tuple[str, str] or Tuple[None, None]:
+    """
+    Login to the ALAMEDA IAM service to obtain an access_token and a refresh_token
+    :param iam_config_file: configuration file storing the IAM endpoint and the username and password under
+    keywords "iam_endpoint", "iam_username" and "iam_password"
+    :return: access_token, refresh_token or None, None if the login failed
+    """
+    with open(iam_config_file, "r") as f:
+        iam_config = yaml.safe_load(f)
+        iam_endpoint = iam_config["iam_endpoint"]
+        iam_username = iam_config["iam_username"]
+        iam_password = iam_config["iam_password"]
+        iam_login_path = iam_config["iam_login_path"]
+
+        # The login endpoint is the iam_endpoint + "/api/v1/auth/login"
+        login_endpoint = f"{iam_endpoint}" + f"{iam_login_path}"
+        # The login payload is a JSON object with the username and password
+        login_payload = {"username": iam_username, "password": iam_password}
+        # The login headers are the standard JSON headers
+        login_headers = {"Content-Type": "application/json"}
+        # The login request is a POST request
+        login_request = requests.post(login_endpoint, json=login_payload, headers=login_headers)
+
+        # If the login request failed, return None, None
+        if login_request.status_code != 200:
+            return None, None
+        else:
+            # The login response is a JSON object with the access_token and the refresh_token
+            login_response = login_request.json()
+            access_token = login_response["access_token"]
+            refresh_token = login_response["refresh_token"]
+            return access_token, refresh_token
+
+
+def iam_logout(access_token: str, refresh_token: str, iam_config_file: str = "iam_config.yaml"):
+    """
+    Logout from the ALAMEDA IAM service
+    :param iam_config_file: configuration file storing the IAM endpoint and IAM logout path under
+    keywords "iam_endpoint" and "iam_logout_path"
+    :param access_token: access token to be used for the logout request
+    :param refresh_token: refresh token to be used for the logout request
+    :return:
+    """
+    with open(iam_config_file, "r") as f:
+        iam_config = yaml.safe_load(f)
+        iam_endpoint = iam_config["iam_endpoint"]
+        iam_logout_path = iam_config["iam_logout_path"]
+
+        # The logout endpoint is the iam_endpoint + "/api/v1/auth/logout"
+        logout_endpoint = f"{iam_endpoint}" + f"{iam_logout_path}"
+        # The logout payload is a JSON object with the refresh_token
+        logout_payload = {"refresh_token": refresh_token}
+        # The logout headers are the standard JSON headers + the Authorization header with the value
+        # "Bearer " + access_token
+        logout_headers = {"Content-Type": "application/json", "Authorization": f"Bearer {access_token}"}
+        # The logout request is a POST request
+        logout_request = requests.post(logout_endpoint, json=logout_payload, headers=logout_headers)
+
+
+def upload_dict_to_semkg(agg_dict: Dict[str, Any], access_token: str):
+    pass
+
+
+def upload_to_semkg(agg_dict: Dict[str, Any]):
+    """
+    Upload the aggregate metrics to the SemKG endpoint
+    :param agg_dict:
+    :return:
+    """
+    # First, check to see if we have a valid access_token and a refresh_token, which are stored in a json file
+    # called "iam_tokens.json". If the file does not exist, then we need to login to the ALAMEDA IAM service
+    # to obtain the tokens.
+    access_token = None
+    refresh_token = None
+
+    if not os.path.exists("iam_tokens.json"):
+        access_token, refresh_token = iam_login()
+        # If the login failed, return
+        if access_token is None or refresh_token is None:
+            return
+        # Otherwise, store the tokens in the iam_tokens.json file
+        else:
+            with open("iam_tokens.json", "w") as f:
+                json.dump({"access_token": access_token, "refresh_token": refresh_token}, f)
+
+    # Now call the upload_dict_to_semkg function, passing the access_token as argument
+    upload_dict_to_semkg(agg_dict, access_token)
+
+    # After the upload, revoke the access_token by calling the logout endpoint of the IAM service
+    iam_logout(access_token, refresh_token)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", type=str, required=True, help="Input .slg file")
     parser.add_argument("--outdir", type=str, required=True, help="Output directory for the resulting .parquet file")
+    parser.add_argument("--upload", action="store_true", help="Upload the aggregate metrics to the SemKG endpoint")
     args = parser.parse_args()
 
     # 1. get the meta information and aggregate measures per foot zone from the .slg file
@@ -159,6 +254,10 @@ if __name__ == "__main__":
     # with the .json extension. Treat nan values as null.
     with open(os.path.join(args.outdir, agg_dict["original_filename"] + ".json"), "w") as f:
         json.dump(agg_dict, f, indent=4, default=str)
+
+    # 3. upload the agg_dict to the SemKG endpoint if the --upload flag is set
+    if args.upload:
+        upload_to_semkg(agg_dict)
 
 
 
