@@ -56,9 +56,9 @@ datacols <- c(
   "Degrees.mean", "Degrees.var", "Degrees.mad",
   "Magnitude.mean",
   "Light.mean",
-  "Temp.mean", "Temp.sumdiff", "Temp.abssumdiff",
-  "Step.GENEAcount", "Step.sd", "Step.mean", "Step.median",
-  "Principal.Frequency.mean", "Principal.Frequency.median"
+  "Temp.mean", "Temp.sumdiff", "Temp.abssumdiff"
+  # "Step.GENEAcount", "Step.sd", "Step.mean", "Step.median",
+  # "Principal.Frequency.mean", "Principal.Frequency.median"
 )
 
 start_time <- "15:00"
@@ -88,7 +88,7 @@ source("Functions/092_light_temp.R")
 source("Functions/093_hypnogram.R")
 source("Functions/10_sleep_summary.R")
 
-i <- 3
+i <- 1
 file_pattern <- "*\\.[bB][iI][nN]$"
 files <- list.files(path = paste0(getwd(), "/Data"), pattern = file_pattern, full.names = TRUE)
 binfile <- files[i]
@@ -100,9 +100,9 @@ datacols <- c(
   "Magnitude.mean", "Magnitude.var", "Magnitude.meandiff", "Magnitude.mad",
   "Light.mean", "Light.max",
   "Temp.mean", "Temp.sumdiff", "Temp.meandiff", "Temp.abssumdiff",
-  "Temp.sddiff", "Temp.var", "Temp.GENEAskew", "Temp.mad",
-  "Step.GENEAcount", "Step.sd", "Step.mean", 
-  "Principal.Frequency.mean", "Principal.Frequency.median"
+  "Temp.sddiff", "Temp.var", "Temp.GENEAskew", "Temp.mad"
+  # "Step.GENEAcount", "Step.sd", "Step.mean", 
+  # "Principal.Frequency.mean", "Principal.Frequency.median"
 )
 
 start_time <- "15:00"
@@ -158,7 +158,9 @@ if (timer) {
   time_stage = append(time_stage, paste0("Deciding on Classes"))
 }
 
-df_pcp <- create_df_pcp(segment_data,
+segment_data_reduced <- segment_data[segment_data$Segment.Duration > 0,]
+
+df_pcp <- create_df_pcp(segment_data_reduced,
   summary_name,
   # r Cut_points
   Magsa_cut = 0.04, # 40mg
@@ -180,11 +182,13 @@ df_pcp <- create_df_pcp(segment_data,
 )
 
 # Add the additional class onto the end.
-segment_data$Class.prior <- segment_data$Class.current <- segment_data$Class.post <- 2
+segment_data_reduced$Class.prior <- segment_data_reduced$Class.current <- segment_data_reduced$Class.post <- 2
 # Create the correct classes for post and priors.
-segment_data$Class.prior[1:(length(segment_data$Class.prior) - 2)] <- df_pcp$Class.current
-segment_data$Class.current[2:(length(segment_data$Class.prior) - 1)] <- df_pcp$Class.current
-segment_data$Class.post[3:(length(segment_data$Class.prior))] <- df_pcp$Class.current
+segment_data_reduced$Class.prior[1:(length(segment_data_reduced$Class.prior) - 2)] <- df_pcp$Class.current
+segment_data_reduced$Class.current[2:(length(segment_data_reduced$Class.prior) - 1)] <- df_pcp$Class.current
+segment_data_reduced$Class.post[3:(length(segment_data_reduced$Class.prior))] <- df_pcp$Class.current
+
+segment_data <- segment_data_reduced
 
 # # Once we've created a sleep score write out the data here. No longer need to save this
 # saveRDS(df_pcp,

@@ -56,13 +56,13 @@ combine_segment_data <- function(binfile,
                                           end = First_Start_time,
                                           mmap.load = mmap.load,
                                           Use.Timestamps = TRUE,
-                                          changepoint = "UpDownMeanVarDegreesMeanVar",
+                                          changepoint = "UpDownDegrees",
                                           penalty = "Manual",
-                                          pen.value1 = 40,
+                                          pen.value1 = 100,
                                           pen.value2 = 400,
                                           datacols = datacols,
                                           intervalseconds = 30,
-                                          mininterval = 1,
+                                          mininterval = 5,
                                           downsample = as.numeric(unlist(header$Value[2]))
                                           )
       } else if (i == DayNo){
@@ -71,13 +71,13 @@ combine_segment_data <- function(binfile,
                                           end = Last_Time,
                                           mmap.load = mmap.load,
                                           Use.Timestamps = TRUE,
-                                          changepoint = "UpDownMeanVarDegreesMeanVar",
+                                          changepoint = "UpDownDegrees",
                                           penalty = "Manual",
                                           pen.value1 = 40,
                                           pen.value2 = 400,
                                           datacols = datacols,
                                           intervalseconds = 30,
-                                          mininterval = 1,
+                                          mininterval = 5,
                                           downsample = as.numeric(unlist(header$Value[2]))
                                           )
       } else {
@@ -86,13 +86,13 @@ combine_segment_data <- function(binfile,
                                           end = First_Start_time + 86400 * i,
                                           mmap.load = mmap.load,
                                           Use.Timestamps = TRUE,
-                                          changepoint = "UpDownMeanVarDegreesMeanVar",
+                                          changepoint = "UpDownDegrees",
                                           penalty = "Manual",
                                           pen.value1 = 40,
                                           pen.value2 = 400,
                                           datacols = datacols,
                                           intervalseconds = 30,
-                                          mininterval = 1,
+                                          mininterval = 5,
                                           downsample = as.numeric(unlist(header$Value[2]))
                                           )
       }

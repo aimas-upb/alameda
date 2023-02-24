@@ -7,6 +7,8 @@ library(ggplot2)
 library(scales)
 library(reshape2)
 library(RJSONIO)
+library(GGIR)
+
 
 # Functions to use.
 source("Functions/01_library_installer.R")
@@ -31,12 +33,7 @@ option_list = list(
 )
 
 opt_parser = OptionParser(option_list=option_list)
-
-# set the input file to a test value
-opt = parse_args(opt_parser, 
-                 # c("-f", "/home/alex/work/AI-MAS/projects/2020-ALAMEDA-H2020/dev/alameda/geneactiv/data/stroke_pilot_baseline/cret_right wrist_064967_2022-10-11 14-32-26.bin")
-                 c("-f", "/home/alex/work/AI-MAS/projects/2020-ALAMEDA-H2020/dev/alameda/geneactiv/data/stroke_pilot_baseline/oisa_right wrist_064964_2022-10-11 14-09-44.bin")
-                 )
+opt = parse_args(opt_parser)
 
 # Get input file and determine the desired processing stage at which to start
 if (is.null(opt$binfile)){
@@ -58,15 +55,10 @@ datacols <- c(
   "UpDown.mean", "UpDown.var", "UpDown.sd",
   "Degrees.mean", "Degrees.var", "Degrees.sd",
   "Magnitude.mean", "Magnitude.var", "Magnitude.meandiff", "Magnitude.mad",
-  "Light.mean", "Light.max",
-  "Temp.mean", "Temp.sumdiff", "Temp.meandiff", "Temp.abssumdiff",
-  "Temp.sddiff", "Temp.var", "Temp.GENEAskew", "Temp.mad",
-  # "Step.GENEAcount", "Step.sd", "Step.mean", 
-  "Principal.Frequency.mean", "Principal.Frequency.median"
 )
 
-# The Start Time is the time of day considered as a cutpoint between two days. That is, from the sleep analysis perspective, a "day" starts at 3PM on day (t) and ends at 2:59PM on day (t+1).
-start_time <- "15:00"
+# The Start Time is the time of day considered as a cutpoint between two days. That is, from the activity analysis perspective, a "day" starts at 3PM on day (t) and ends at 2:59PM on day (t+1).
+start_time <- "12:00"
 
 # 0. Write the header of the file as JSON
 header <- header.info(binfile)
@@ -190,55 +182,55 @@ if (!file.exists(file.path(getwd(), "/Outputs/", sleep_summary_file))) {
                               boundarys)
   write.csv(sleep_statistics, file.path(getwd(), "/Outputs/", sleep_summary_file), row.names = FALSE)
   
-  text <- " "
-  write.table(text,
-              file = file.path(paste0("Outputs/", sleep_summary_file)),
-              append = T,
-              sep = ",",
-              row.names = F,
-              col.names = F
-  )
-
-  text <- "Sleep Interruptions through each night"
-  write.table(text,
-              file = file.path(paste0("Outputs/", sleep_summary_file)),
-              append = T,
-              sep = ",",
-              row.names = F,
-              col.names = F
-  )
-
-  for (j in 1:length(bed_rise_df$bed_time)) {
-    # Skipping variable
-    Skipping <- FALSE
-
-    df <- segment_data[segment_data$Start.Time > bed_rise_df$bed_time[j] &
-                         segment_data$Start.Time < bed_rise_df$rise_time[j], ]
-
-    # Sleep Interruptions - From SIN, Inactive or Active class
-    sleep_interruptions <- df[df$Class.current == 2 |
-                                df$Class.current == 3 |
-                                df$Class.current == 4, ]
-
-    # If no interruptions
-    if (length(df$Start.Time) == 0 | is.null(df) == TRUE) {
-      Sleep_List <- c(as.character(j), "No interruptions")
-      # Now writing these lines under the Date
-      write.table(t(Sleep_List),
-                  file = file.path(paste0("Outputs/", sleep_summary_file)),
-                  append = T,
-                  sep = ",",
-                  row.names = F,
-                  col.names = F
-      )
-      next
-    } else {
-      write.table(sleep_interruptions,
-                  file = file.path(paste0("Outputs/", sleep_summary_file)),
-                  append = T,
-                  sep = ",",
-                  row.names = F,
-                  col.names = F)
-    }
-  }
+  # text <- " "
+  # write.table(text,
+  #             file = file.path(paste0("Outputs/", sleep_summary_file)),
+  #             append = T,
+  #             sep = ",",
+  #             row.names = F,
+  #             col.names = F
+  # )
+  # 
+  # text <- "Sleep Interruptions through each night"
+  # write.table(text,
+  #             file = file.path(paste0("Outputs/", sleep_summary_file)),
+  #             append = T,
+  #             sep = ",",
+  #             row.names = F,
+  #             col.names = F
+  # )
+  # 
+  # for (j in 1:length(bed_rise_df$bed_time)) {
+  #   # Skipping variable
+  #   Skipping <- FALSE
+  #   
+  #   df <- segment_data[segment_data$Start.Time > bed_rise_df$bed_time[j] &
+  #                        segment_data$Start.Time < bed_rise_df$rise_time[j], ]
+  #   
+  #   # Sleep Interruptions - From SIN, Inactive or Active class
+  #   sleep_interruptions <- df[df$Class.current == 2 |
+  #                               df$Class.current == 3 |
+  #                               df$Class.current == 4, ]
+  #   
+  #   # If no interruptions
+  #   if (length(df$Start.Time) == 0 | is.null(df) == TRUE) {
+  #     Sleep_List <- c(as.character(j), "No interruptions")
+  #     # Now writing these lines under the Date
+  #     write.table(t(Sleep_List),
+  #                 file = file.path(paste0("Outputs/", sleep_summary_file)),
+  #                 append = T,
+  #                 sep = ",",
+  #                 row.names = F,
+  #                 col.names = F
+  #     )
+  #     next
+  #   } else {
+  #     write.table(sleep_interruptions,
+  #                 file = file.path(paste0("Outputs/", sleep_summary_file)),
+  #                 append = T,
+  #                 sep = ",",
+  #                 row.names = F,
+  #                 col.names = F)
+  #   }
+  # }
 }
