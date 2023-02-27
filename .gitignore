@@ -134,3 +134,6 @@ data/
 
 # .idea
 .idea/
+
+# insoles IAM config
+insoles/iam_config.yaml
