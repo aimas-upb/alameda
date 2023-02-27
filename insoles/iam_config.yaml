@@ -1,6 +1,0 @@
-iam_endpoint: "https://iam-backend.alamedaproject.eu"
-iam_username: "upb-service@upb.ro"
-iam_password: "RkBhBY8vy9CAXtje9JDLZvyFdV8WWDiInzyF1Z5s"
-iam_login_path: "/api/v1/auth/login"
-iam_logout_path: "/api/v1/auth/logout"
-iam_verify_path: "/api/v1/auth/verify"
