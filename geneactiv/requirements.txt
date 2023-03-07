@@ -2,3 +2,4 @@ actipy==0.0.2
 pyarrow==11.0.0
 pandas==1.4.1
 plotly==5.13.1
+requests==2.27.1
