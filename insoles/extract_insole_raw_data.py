@@ -10,7 +10,7 @@ from datetime import datetime, time
 
 def get_raw_data(filename: str) -> Tuple[str, str, datetime, float, pd.DataFrame]:
     """
-    Extract the aggregate information from the .mva file returning:
+    Extract the information from the .mva file returning:
     - the original pdo file name
     - the file creation time
     - the total duration of the recorded data
@@ -98,7 +98,7 @@ def get_raw_data(filename: str) -> Tuple[str, str, datetime, float, pd.DataFrame
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", type=str, required=True, help="Input .slg file")
+    parser.add_argument("--input", type=str, required=True, help="Input .mva file")
     parser.add_argument("--outdir", type=str, required=True, help="Output directory for the resulting .parquet file")
     args = parser.parse_args()
 
@@ -119,7 +119,7 @@ if __name__ == "__main__":
     out_filename = os.path.join(args.outdir, original_filename + ".parquet")
 
     # 2. store the step_df dataframe as a parquet file
-    step_df.to_parquet(out_filename, index=False)
+    step_df.to_parquet(out_filename, index=False, partition_cols=["patient_id", "date"])
 
 
 

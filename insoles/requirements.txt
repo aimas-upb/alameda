@@ -1,0 +1,5 @@
+pyarrow==11.0.0
+pandas==1.4.1
+requests==2.27.1
+yaml==6.0
+```

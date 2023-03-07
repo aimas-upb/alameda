@@ -4,6 +4,8 @@ Script to extract aggregate metrics from insole data stored in an .slg tab separ
 
 import os
 import argparse
+
+import numpy as np
 import pandas as pd
 from typing import Dict, Any, Tuple
 from datetime import datetime, time
@@ -56,7 +58,8 @@ def get_aggregate_information(filename: str) -> Dict[str, Any]:
                 timestamp = datetime.strptime(timestamp_str, "%y-%m-%d %H-%M-%S-%f")
                 agg_dict["patient_id"] = patient_id
                 agg_dict["original_filename"] = original_pdo_filename
-                agg_dict["start_timestamp"] = timestamp
+                # agg_dict["start_timestamp"] = timestamp.strftime("%Y-%m-%dT%H:%M:%S.%f%zZ")
+                agg_dict["start_timestamp"] = timestamp.isoformat()
 
             # 2. read the 3rd row of the file and separate by column to get the body weight as the second argument,
             # converting to int
@@ -79,8 +82,8 @@ def get_aggregate_information(filename: str) -> Dict[str, Any]:
                 end_time = datetime.strptime(end_time_str.split(" ")[-1].strip(), "%H:%M:%S:%f").time()
                 time_per_frame = float(time_per_frame_str.split(" ")[-1].strip())
                 sampling_frequency = int(sampling_frequency_str.split(" ")[-1].strip())
-                agg_dict["start_time"] = start_time
-                agg_dict["end_time"] = end_time
+                agg_dict["start_time"] = start_time.isoformat()
+                agg_dict["end_time"] = end_time.isoformat()
                 agg_dict["time_per_frame"] = time_per_frame
                 agg_dict["sampling_frequency"] = sampling_frequency
                 agg_dict["total_duration"] = (datetime.combine(datetime.today(), end_time) - datetime.combine(datetime.today(), start_time)).total_seconds()
@@ -118,6 +121,9 @@ def get_aggregate_information(filename: str) -> Dict[str, Any]:
     # convert all columns to numeric
     force_limit_df = force_limit_df.apply(pd.to_numeric, errors="ignore")
 
+    # convert all NaN values to None
+    force_limit_df = force_limit_df.replace(np.NaN, None)
+
     # convert the dataframe to a dictionary, by having the zones column as a first level key and
     # the column names as second level keys
     force_limit_dict = force_limit_df.set_index("zones").T.to_dict("index")
@@ -140,6 +146,9 @@ def get_aggregate_information(filename: str) -> Dict[str, Any]:
     agg_df.loc[agg_df["avg_loading_rate"] == "---", "avg_loading_rate"] = None
     agg_df = agg_df.apply(pd.to_numeric, errors="ignore")
 
+    # convert all NaN values appearing in the dataframe to None
+    agg_df = agg_df.replace(np.NaN, None)
+
     # convert the dataframe to a dictionary, by having the zones column as a first level key and
     # the column names as second level keys
     agg_dict.update(agg_df.set_index("zones").T.to_dict("index"))
@@ -147,7 +156,7 @@ def get_aggregate_information(filename: str) -> Dict[str, Any]:
     return agg_dict
 
 
-def iam_login(iam_config_file: str = "iam_config.yaml") -> Tuple[str, str] or Tuple[None, None]:
+def iam_login(iam_config_file: str = "config.yaml") -> Tuple[str, str] or Tuple[None, None]:
     """
     Login to the ALAMEDA IAM service to obtain an access_token and a refresh_token
     :param iam_config_file: configuration file storing the IAM endpoint and the username and password under
@@ -181,7 +190,7 @@ def iam_login(iam_config_file: str = "iam_config.yaml") -> Tuple[str, str] or Tu
             return access_token, refresh_token
 
 
-def iam_logout(access_token: str, refresh_token: str, iam_config_file: str = "iam_config.yaml"):
+def iam_logout(access_token: str, refresh_token: str, iam_config_file: str = "config.yaml"):
     """
     Logout from the ALAMEDA IAM service
     :param iam_config_file: configuration file storing the IAM endpoint and IAM logout path under
@@ -207,7 +216,31 @@ def iam_logout(access_token: str, refresh_token: str, iam_config_file: str = "ia
 
 
 def upload_dict_to_semkg(agg_dict: Dict[str, Any], access_token: str):
-    pass
+    """
+    Upload the aggregate metrics to the SemKG endpoint configured in the config.yaml file
+    :param agg_dict:
+    :param access_token:
+    :return:
+    """
+    # get the semkg_endpoint and the semkg_upload_path from the config.yaml file
+    with open("config.yaml", "r") as f:
+        config = yaml.safe_load(f)
+        semkg_endpoint = config["semkg_endpoint"]
+        semkg_post_path = config["semkg_post_path"]
+
+        # The upload endpoint is the semkg_endpoint + semkg_post_path
+        upload_endpoint = f"{semkg_endpoint}" + f"{semkg_post_path}"
+        # The upload headers are the standard JSON headers + the Authorization header with the value
+        # "Bearer " + access_token
+        # The payload is the agg_dict
+        req = requests.post(upload_endpoint, json=agg_dict,
+                            headers={"Content-Type": "application/json",
+                                     "Authorization": f"Bearer {access_token}"})
+        if req.status_code != 200:
+            print(f"Upload failed with status code {req.status_code}")
+            print(req.text)
+        else:
+            print(f"Upload succeeded with status code {req.status_code}")
 
 
 def upload_to_semkg(agg_dict: Dict[str, Any]):
@@ -233,16 +266,21 @@ def upload_to_semkg(agg_dict: Dict[str, Any]):
                 json.dump({"access_token": access_token, "refresh_token": refresh_token}, f)
 
     # Now call the upload_dict_to_semkg function, passing the access_token as argument
-    upload_dict_to_semkg(agg_dict, access_token)
-
-    # After the upload, revoke the access_token by calling the logout endpoint of the IAM service
-    iam_logout(access_token, refresh_token)
+    try:
+        upload_dict_to_semkg(agg_dict, access_token)
+    except Exception as e:
+        print(f"Upload failed with exception {e}")
+    finally:
+        # After the upload, revoke the access_token by calling the logout endpoint of the IAM service
+        iam_logout(access_token, refresh_token)
+        # delete the iam_tokens.json file
+        os.remove("iam_tokens.json")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", type=str, required=True, help="Input .slg file")
-    parser.add_argument("--outdir", type=str, required=True, help="Output directory for the resulting .parquet file")
+    parser.add_argument("--outdir", type=str, required=True, help="Output directory for the resulting .json file")
     parser.add_argument("--upload", action="store_true", help="Upload the aggregate metrics to the SemKG endpoint")
     args = parser.parse_args()
 
@@ -253,7 +291,7 @@ if __name__ == "__main__":
     # 2. store the dictionary as a json file in the output directory, naming the file as the original pdo filename
     # with the .json extension. Treat nan values as null.
     with open(os.path.join(args.outdir, agg_dict["original_filename"] + ".json"), "w") as f:
-        json.dump(agg_dict, f, indent=4, default=str)
+        json.dump(agg_dict, f, indent=4)
 
     # 3. upload the agg_dict to the SemKG endpoint if the --upload flag is set
     if args.upload:
