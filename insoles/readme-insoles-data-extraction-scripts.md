@@ -89,6 +89,8 @@ python extract_aggregate_insole_metrics.py --input ./data/stroke36_22-10-11_14-3
 ```
 produces the following `stroke36_22-10-11_14-30-36-917.json`  output file in the `data/extracted_data` OUTDIR.
 
+The description and measurement units of each JSON key is provided in the [Schema of extracted Novel Loadsol summary metrics](https://docs.google.com/document/d/1YTuEdNpkR3xzA4bpPl6L7SGrbUtVuvgI6hmkvZDwjo8/edit?usp=sharing) document.
+
 ```JSON
 {  
     "patient_id": "stroke36",  
