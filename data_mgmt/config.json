@@ -1,0 +1,24 @@
+{
+    "server_public_uri": "https://cnlcloud.cn.ntua.gr/index.php/s/3tzPBbHRqggC8w7",
+
+    "remote_bracelet_root_path": "GENEActiv Bracelets",
+    "remote_insoles_root_path": "Loadsol Insoles",
+    "pilot_relative_paths": {
+        "stroke": "SUUB - Stroke",
+        "pd": "NKUA - PD",
+        "ms": "FISM - MS"
+    },
+    "remote_dataset_root_path": "datasets",
+
+    "local_root_data_path": "/home/alex/work/AI-MAS/projects/2020-ALAMEDA-H2020/dev/alameda/data_mgmt/data",
+    "local_raw_dir": "raw",
+    "local_staging_dir": "staged",
+
+    "smart_bracelet_path": "bracelet",
+    "smart_insole_path": "insoles",
+    "smart_watch_path": "watch",
+    "smart_belt_path": "belt",
+
+    "start_date": "2023-02-10",
+    "end_date": "2023-02-10"
+}
