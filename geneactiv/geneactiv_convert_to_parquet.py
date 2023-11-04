@@ -73,16 +73,13 @@ if __name__ == '__main__':
     watch_files = glob(os.path.join(input_dir, "*.bin"))
 
     for file in tqdm(watch_files):
-        base_name = os.path.basename(file).split(".bin")[0].replace(" ", "_")
-        print(f" -> now at {base_name}")
+        # obtain the body position from the filename as the second part of the file's basename, after splitting by "_"
+        base_name = os.path.basename(file).split(".bin")[0]
+        body_position = base_name.split("_")[1].replace(" ", "_")
 
-        # create a folder in the output directory for the current patient, named using the base name of the file
-        patient_dir = os.path.join(output_dir, base_name)
-        if not os.path.exists(patient_dir):
-            os.makedirs(patient_dir)
-
+        base_name = base_name.replace(" ", "_")
         patient_id = _extract_patient_id_from_filename(base_name)
-        metadata_file = os.path.join(patient_dir, patient_id + "_" + "meta" + ".json")
+        print(f" -> now at {base_name}")
 
         # First, just read the plain data, without any processing.
         data, info = actipy.read_device(file, lowpass_hz=None, calibrate_gravity=False, detect_nonwear=False,
@@ -103,10 +100,6 @@ if __name__ == '__main__':
         info.update(info_calib)
         timer.stop()
 
-        # save the metadata dict as a json file
-        with open(metadata_file, "w") as f:
-            json.dump(info, f, cls=NpEncoder)
-
         # The acceleration data is too large to store in a single parquet file, so we split it by days, by
         # looking at the index of the data. We then write each day to a separate parquet file, after having marked
         # the non-wear period in that day with a NaN value.
@@ -123,10 +116,29 @@ if __name__ == '__main__':
         # get the midnight before the last day
         last_day_midnight = end_date.replace(hour=0, minute=0, second=0, microsecond=0)
 
+        print(f"Recording has first_day_midnight: {first_day_midnight} and last_day_midnight: {last_day_midnight}")
+
         # get the days in between
         day_range = pd.date_range(start=first_day_midnight, end=last_day_midnight, freq="D")
         # add the start and end date to the day range
         day_range = [start_date] + list(day_range) + [end_date]
+
+        # create a folder in the output directory for the current patient using the following naming convention:
+        # <patient_id>_<body_site>_<device_serial_number>_<start_date>_<end_date>, where the start and end date
+        # are formatted as YYYY-MM-DD.
+        patient_dir = os.path.join(output_dir, 
+                                   patient_id + "_" + body_position + "_" + info["DeviceID"] + "_" + 
+                                   start_date.strftime("%Y-%m-%d") + "_" + end_date.strftime("%Y-%m-%d"))
+
+        if not os.path.exists(patient_dir):
+            os.makedirs(patient_dir)
+
+        metadata_file = os.path.join(patient_dir, patient_id + "_" + "meta" + ".json")
+        
+        # save the metadata dict as a json file
+        with open(metadata_file, "w") as f:
+            json.dump(info, f, cls=NpEncoder)
+
 
         # Iterate over the days and write the data for each day to a separate parquet file.
         for day_idx in range(1, len(day_range)):
