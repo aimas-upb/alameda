@@ -36,7 +36,7 @@ def get_aggregate_information(filename: str) -> Dict[str, Any]:
 
     agg_dict = {}
 
-    with open(args.input, "r") as f:
+    with open(filename, "r") as f:
         for i, line in enumerate(f):
             # 1. read the first row of the file and separate by tab to get the filename and the timestamp strings
             if i == 0:
@@ -108,7 +108,7 @@ def get_aggregate_information(filename: str) -> Dict[str, Any]:
     # We are first reading in rows 12-18 from the tab separated slg file. The column names are: zones,
     # above_limit_percent, between_limit_percent, below_limit_percent, upper_force_limit, lower_force_limit,
     # drop_percent
-    force_limit_df = pd.read_csv(args.input, sep="\t", skiprows=11, nrows=7, header=None,
+    force_limit_df = pd.read_csv(filename, sep="\t", skiprows=11, nrows=7, header=None,
                                  names=["zones", "above_limit_percent", "between_limit_percent", "below_limit_percent",
                                         "upper_force_limit", "lower_force_limit", "drop_percent"])
     # replace the values of the zones column with the zone names: ["left_heel", "left_forefoot", "left",
@@ -132,7 +132,7 @@ def get_aggregate_information(filename: str) -> Dict[str, Any]:
     # Then we are reading in rows 21-26 from the tab separated
     # slg file. The column names are: zones, steps, avg_contact_time, avg_peak_force, avg_loading_rate, fti,
     # forefoot_percent, midfoot_percent and heel_percent. All columns are numeric.
-    agg_df = pd.read_csv(args.input, sep="\t", skiprows=20, nrows=7, header=None,
+    agg_df = pd.read_csv(filename, sep="\t", skiprows=20, nrows=7, header=None,
                           names=["zones", "steps", "avg_contact_time", "avg_peak_force",
                                  "avg_loading_rate", "fti", "forefoot_percent", "midfoot_percent", "heel_percent"])
     # remove the last row, which is the total
@@ -279,24 +279,50 @@ def upload_to_semkg(agg_dict: Dict[str, Any]):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", type=str, required=True, help="Input .slg file")
+    parser.add_argument("--input", type=str, required=True, help="Input .slg file or folder of .slg files")
     parser.add_argument("--outdir", type=str, required=True, help="Output directory for the resulting .json file")
     parser.add_argument("--upload", action="store_true", help="Upload the aggregate metrics to the SemKG endpoint")
     args = parser.parse_args()
 
-    # 1. get the meta information and aggregate measures per foot zone from the .slg file
-    agg_dict = get_aggregate_information(args.input)
-    # print(agg_dict)
+    # Check if input is a file or a directory
+    if os.path.isfile(args.input):
+        print("Handling single file {}".format(args.input))
 
-    # 2. store the dictionary as a json file in the output directory, naming the file as the original pdo filename
-    # with the .json extension. Treat nan values as null.
-    with open(os.path.join(args.outdir, agg_dict["original_filename"] + ".json"), "w") as f:
-        json.dump(agg_dict, f, indent=4)
+        # 1. get the meta information and aggregate measures per foot zone from the .slg file
+        agg_dict = get_aggregate_information(args.input)
+        # print(agg_dict)
 
-    # 3. upload the agg_dict to the SemKG endpoint if the --upload flag is set
-    if args.upload:
-        upload_to_semkg(agg_dict)
+        # 2. store the dictionary as a json file in the output directory, naming the file as the original pdo filename
+        # with the .json extension. Treat nan values as null.
+        with open(os.path.join(args.outdir, agg_dict["original_filename"] + ".json"), "w") as f:
+            json.dump(agg_dict, f, indent=4)
 
+        # 3. upload the agg_dict to the SemKG endpoint if the --upload flag is set
+        if args.upload:
+            upload_to_semkg(agg_dict)
+    else:
+        print("Handling directory {}".format(args.input))
+
+        # parse recursively the directory and process all files ending in .slg
+        for root, dirs, files in os.walk(args.input):
+            for file in files:
+                if file.endswith(".slg"):
+                    slg_file_path = os.path.join(root, file)
+
+                    print("Handling file {}".format(slg_file_path))
+
+                    # 1. get the meta information and aggregate measures per foot zone from the .slg file
+                    agg_dict = get_aggregate_information(slg_file_path)
+                    # print(agg_dict)
+
+                    # 2. store the dictionary as a json file in the output directory, naming the file as the original pdo filename
+                    # with the .json extension. Treat nan values as null.
+                    with open(os.path.join(args.outdir, agg_dict["original_filename"] + ".json"), "w") as f:
+                        json.dump(agg_dict, f, indent=4)
+
+                    # 3. upload the agg_dict to the SemKG endpoint if the --upload flag is set
+                    if args.upload:
+                        upload_to_semkg(agg_dict)
 
 
 

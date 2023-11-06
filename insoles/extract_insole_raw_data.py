@@ -20,19 +20,21 @@ def get_raw_data(filename: str) -> Tuple[str, str, datetime, float, pd.DataFrame
     :return: A tuple containing the (patientID, original filename, the creation time, total duration,
     dataframe of raw data)
     """
+    print(f"Extracting raw data from {filename}...")
+
 
     agg_dict = {}
-    with open(args.input, "r") as f:
+    with open(filename, "r") as f:
         for i, line in enumerate(f):
             # 1. read the first row of the file and separate by tab to get the filename and the timestamp strings
             if i == 0:
                 line_elements = line.split("\t")
-                filename_str = line_elements[0]
 
                 # split the filename string by column to get the original pdo file name, as the second argument,
                 # by removing leading and trailing whitespace and removing the .pdo extension
-                filename_str_split = filename_str.split(":")
-                original_pdo_filename = filename_str_split[1].strip().replace(".pdo", "")
+                filename_str = os.path.basename(filename)
+                # filename_str_split = filename_str.split(":")
+                original_pdo_filename = filename_str.strip().replace(".mva", "")
 
                 # split the original pdo filename by underscore to get the patient id, as the first argument,
                 # and the timestamp string as the second
@@ -40,8 +42,20 @@ def get_raw_data(filename: str) -> Tuple[str, str, datetime, float, pd.DataFrame
                 patient_id = original_pdo_filename_split[0]
                 timestamp_str = original_pdo_filename_split[1]
 
-                # convert the timestamp string to a datetime object
-                timestamp = datetime.strptime(timestamp_str, "%y-%m-%d %H-%M-%S-%f")
+                # convert the timestamp string to a datetime object - try first "%Y-%m-%d %H-%M-%S-%f" and, if that fails,
+                # try "%y-%m-%d %H-%M-%S-%f" and if that fails then try "%Y-%m-%d %H-%M-%S"
+                try:
+                    timestamp = datetime.strptime(timestamp_str, "%Y-%m-%d %H-%M-%S-%f")
+                except Exception:
+                    try:
+                        timestamp = datetime.strptime(timestamp_str, "%y-%m-%d %H-%M-%S-%f")
+                    except Exception:
+                        try:
+                            timestamp = datetime.strptime(timestamp_str, "%y-%m-%d %H-%M-%S")
+                        except Exception:
+                            timestamp = datetime.strptime(timestamp_str, "%Y-%m-%d %H-%M-%S")
+
+                
                 agg_dict["patient_id"] = patient_id
                 agg_dict["original_filename"] = original_pdo_filename
                 agg_dict["start_timestamp"] = timestamp
@@ -64,7 +78,7 @@ def get_raw_data(filename: str) -> Tuple[str, str, datetime, float, pd.DataFrame
 
     # The rest of the information we extract as a pandas dataframe, reading in rows 13 to end from the tab separated
     # mva file.
-    step_df = pd.read_csv(args.input, sep="\t", skiprows=12, header=None,
+    step_df = pd.read_csv(filename, sep="\t", skiprows=12, header=None,
                           names=["timestamp", "time_rel_start", "step_left", "force_left_heel", "fti_left_heel",
                                  "force_left_forefoot", "fti_left_forefoot", "force_left", "fti_left",
                                  "step_right", "force_right_heel", "fti_right_heel", "force_right_forefoot",
@@ -76,15 +90,16 @@ def get_raw_data(filename: str) -> Tuple[str, str, datetime, float, pd.DataFrame
     # cast the timestamp column to a time object
     step_df["timestamp"] = step_df["timestamp"].apply(lambda x: datetime.strptime(x, "%H:%M:%S:%f").time())
 
-    # convert all "---" values appearing in columns step_left and step_right to NaN
-    step_df["step_left"] = step_df["step_left"].apply(lambda x: float(x.strip()) if x.strip() != "---" else float("NaN"))
-    step_df["step_right"] = step_df["step_right"].apply(lambda x: float(x.strip()) if x.strip() != "---" else float("NaN"))
+    # convert all "---" values appearing in columns step_left, step_right and ablt to NaN
+    step_df["step_left"] = step_df["step_left"].apply(lambda x: x if isinstance(x, float) else float(x.strip()) if x.strip() != "---" else float("NaN"))
+    step_df["step_right"] = step_df["step_right"].apply(lambda x: x if isinstance(x, float) else float(x.strip()) if x.strip() != "---" else float("NaN"))
+    step_df["ablt"] = step_df["ablt"].apply(lambda x: lambda x: x if isinstance(x, float) else float(x.strip()) if x.strip() != "---" else float("NaN"))
 
     # convert foib column to float by looking at the string value and seeing if it ends in "R" or "L".
     # If it ends in "R" then the value is obtained by splitting the string for space end taking the first element is
     # multiplied with 1.0. If it ends in "L" then the value, obtained in the same way, is multiplied with -1.0.
     # If it does not end in "R" or "L" then the value is converted to float.
-    step_df["foib"] = step_df["foib"].apply(lambda x: float(x) if x.endswith("R") is False and x.endswith("L") is False
+    step_df["foib"] = step_df["foib"].apply(lambda x: x if isinstance(x, float) else float("NaN") if x.strip() == "---" else float(x) if x.endswith("R") is False and x.endswith("L") is False
         else float(x.strip().split(" ")[0]) * 1.0 if x.endswith("R") else float(x.strip().split(" ")[0]) * -1.0)
 
     # convert all columns, except timestamp, to numeric
@@ -96,32 +111,50 @@ def get_raw_data(filename: str) -> Tuple[str, str, datetime, float, pd.DataFrame
               agg_dict["total_duration"], step_df
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--input", type=str, required=True, help="Input .mva file")
-    parser.add_argument("--outdir", type=str, required=True, help="Output directory for the resulting .parquet file")
-    args = parser.parse_args()
-
-    # 1. get the meta information and aggregate measures per foot zone from the .slg file
-    patient_id, original_filename, start_timestamp, total_duration, step_df = get_raw_data(args.input)
+def process_mva_file(mva_file_path: str, root_output_dir: str):
+    # 1. get the meta information and aggregate measures per foot zone from the .mva file
+    patient_id, original_filename, start_timestamp, total_duration, step_df = get_raw_data(mva_file_path)
 
     # add patient_id and the date component of start_timestamp to the step_df dataframe
     step_df["patient_id"] = patient_id
     step_df["date"] = start_timestamp.date()
 
-    print("Patient ID: {}".format(patient_id))
-    print("Original filename: {}".format(original_filename))
-    print("Start timestamp: {}".format(start_timestamp))
-    print("Total duration: {}".format(total_duration))
-    print("Step dataframe describe: {}".format(step_df.describe()))
-    print(step_df.head())
+    # print("Patient ID: {}".format(patient_id))
+    # print("Original filename: {}".format(original_filename))
+    # print("Start timestamp: {}".format(start_timestamp))
+    # print("Total duration: {}".format(total_duration))
+    # print("Step dataframe describe: {}".format(step_df.describe()))
+    # print(step_df.head())
 
-    out_filename = os.path.join(args.outdir, original_filename + ".parquet")
-
+    # the output directory has the root given by args.outdir and a path given by the patient_id and the date component of start_timestamp
+    output_dir = os.path.join(root_output_dir, patient_id, str(start_timestamp.date()))
+    out_filename = os.path.join(output_dir, original_filename + ".parquet")
+    
+    # if the output directory does not exist, create it
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    
     # 2. store the step_df dataframe as a parquet file
-    step_df.to_parquet(out_filename, index=False, partition_cols=["patient_id", "date"])
+    # step_df.to_parquet(out_filename, index=False, partition_cols=["patient_id", "date"])
+    step_df.to_parquet(out_filename, index=False)
 
 
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input", type=str, required=True, help="Input .mva file or directory of .mva files")
+    parser.add_argument("--outdir", type=str, required=True, help="Output directory for the resulting .parquet file")
+    args = parser.parse_args()
 
-
+    # If the input is a file, then we process the file directly
+    if os.path.isfile(args.input):
+        process_mva_file(args.input, args.outdir)
+    else:
+        # If the input is a directory, then we process it recursively until we reach .mva files, which we process
+        # The root output directory is the same for all the files.
+        for root, dirs, files in os.walk(args.input):
+            for file in files:
+                if file.endswith(".mva"):
+                    mva_file_path = os.path.join(root, file)
+                    process_mva_file(mva_file_path, args.outdir)
+        
 
