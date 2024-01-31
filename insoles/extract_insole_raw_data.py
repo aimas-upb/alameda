@@ -93,7 +93,7 @@ def get_raw_data(filename: str) -> Tuple[str, str, datetime, float, pd.DataFrame
     # convert all "---" values appearing in columns step_left, step_right and ablt to NaN
     step_df["step_left"] = step_df["step_left"].apply(lambda x: x if isinstance(x, float) else float(x.strip()) if x.strip() != "---" else float("NaN"))
     step_df["step_right"] = step_df["step_right"].apply(lambda x: x if isinstance(x, float) else float(x.strip()) if x.strip() != "---" else float("NaN"))
-    step_df["ablt"] = step_df["ablt"].apply(lambda x: lambda x: x if isinstance(x, float) else float(x.strip()) if x.strip() != "---" else float("NaN"))
+    step_df["ablt"] = step_df["ablt"].apply(lambda x: x if isinstance(x, float) else float(x.strip()) if x.strip() != "---" else float("NaN"))
 
     # convert foib column to float by looking at the string value and seeing if it ends in "R" or "L".
     # If it ends in "R" then the value is obtained by splitting the string for space end taking the first element is
